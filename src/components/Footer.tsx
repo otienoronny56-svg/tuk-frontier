@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="footer-col">
-            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', tracking: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Hackathon</h4>
+            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Hackathon</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
                 <Link to="/" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Home</Link>
@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div className="footer-col">
-            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', tracking: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Resources</h4>
+            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Resources</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
                 <Link to="/guide" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Hacker Guide</Link>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="footer-col">
-            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', tracking: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Contact Info</h4>
+            <h4 style={{ color: 'var(--tuk-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700, marginBottom: '1.25rem' }}>Contact Info</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-tuk-gold" style={{ flexShrink: 0, marginTop: '0.2rem' }} />

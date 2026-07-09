@@ -3,31 +3,6 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 
-const scheduleData = [
-  { day: 'Day 1: Kickoff', date: 'Friday, Oct 24', events: [
-    { time: '09:00 AM', title: 'Registration & Swag Pickup', location: 'Main Hall' },
-    { time: '10:30 AM', title: 'Opening Ceremony', location: 'Auditorium' },
-    { time: '11:30 AM', title: 'Team Formation & Ideation', location: 'Networking Area' },
-    { time: '12:30 PM', title: 'Lunch Break', location: 'Cafeteria' },
-    { time: '01:30 PM', title: 'Hacking Begins!', location: 'Hacking Arena' },
-    { time: '05:00 PM', title: 'Mentor Check-in 1', location: 'Hacking Arena' },
-  ]},
-  { day: 'Day 2: Build & Learn', date: 'Saturday, Oct 25', events: [
-    { time: '09:00 AM', title: 'Breakfast', location: 'Cafeteria' },
-    { time: '10:00 AM', title: 'Workshop: Intro to Supabase', location: 'Room 101' },
-    { time: '01:00 PM', title: 'Lunch', location: 'Cafeteria' },
-    { time: '03:00 PM', title: 'Mentor Check-in 2', location: 'Hacking Arena' },
-    { time: '07:00 PM', title: 'Dinner & Game Night', location: 'Lounge' },
-  ]},
-  { day: 'Day 3: Final Push', date: 'Sunday, Oct 26', events: [
-    { time: '08:00 AM', title: 'Breakfast', location: 'Cafeteria' },
-    { time: '11:00 AM', title: 'Submission Deadline', location: 'Online Portal' },
-    { time: '12:00 PM', title: 'Lunch', location: 'Cafeteria' },
-    { time: '01:00 PM', title: 'Judging & Pitches', location: 'Auditorium' },
-    { time: '04:00 PM', title: 'Closing Ceremony & Awards', location: 'Auditorium' },
-  ]},
-];
-
 export default function Schedule() {
   const [scheduleData, setScheduleData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

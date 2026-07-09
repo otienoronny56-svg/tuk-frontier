@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Target, Trophy, Clock, HelpCircle, ArrowRight, Code, Zap, Globe, Shield, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon } from 'lucide-react';
+import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
@@ -185,7 +185,7 @@ export default function Home() {
                 { label: 'Minutes', value: timeLeft.minutes },
                 { label: 'Seconds', value: timeLeft.seconds }
               ].map((unit, i) => (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyCenter: 'center', minWidth: '60px' }}>
+                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '60px' }}>
                   <div className="text-2xl sm:text-3xl font-black leading-none mb-1 tabular-nums" style={{ color: 'var(--foreground)' }}>{String(unit.value).padStart(2, '0')}</div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--muted-foreground)' }}>{unit.label}</div>
                 </div>
@@ -670,6 +670,4 @@ export default function Home() {
   );
 }
 
-function CheckCircle() {
-  return <div className="text-green-400"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>;
-}
+

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Public/Home';
 import About from './pages/Public/About';
 import Tracks from './pages/Public/Tracks';
@@ -16,8 +16,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const WhatsAppButton = () => {
-  const location = useLocation();
-  
   return (
     <a 
       href="https://wa.me/254791021846" 

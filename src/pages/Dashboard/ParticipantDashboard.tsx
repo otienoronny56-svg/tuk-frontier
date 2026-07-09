@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
-import { Key, Upload, FileText, CheckCircle2, User, LayoutDashboard, Users, MessageSquare, BookOpen, ExternalLink } from 'lucide-react';
+import { Key, CheckCircle2, User, LayoutDashboard, Users, MessageSquare, BookOpen, ExternalLink } from 'lucide-react';
 
 export default function ParticipantDashboard({ userId }: { userId: string }) {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'team' | 'mentor' | 'resources' | 'profile'>('dashboard');
@@ -89,10 +89,14 @@ export default function ParticipantDashboard({ userId }: { userId: string }) {
             .in('assignment_id', assignIds);
           if (scoresData) {
             // Merge judge names into scores
-            const enriched = scoresData.map(s => ({
-              ...s,
-              judge_name: assignData.find(a => a.id === s.assignment_id)?.judge?.full_name || 'Anonymous Judge'
-            }));
+            const enriched = scoresData.map(s => {
+              const assignment = assignData.find(a => a.id === s.assignment_id);
+              const judge = assignment?.judge as { full_name: string } | null | undefined;
+              return {
+                ...s,
+                judge_name: judge?.full_name || 'Anonymous Judge'
+              };
+            });
             setProjectScores(enriched);
           }
         }
@@ -206,7 +210,7 @@ export default function ParticipantDashboard({ userId }: { userId: string }) {
     if (file) {
       const fileExt = file.name.split('.').pop();
       const fileName = `${activeTeamId}_${Date.now()}.${fileExt}`;
-      const { error: uploadError, data: uploadData } = await supabase.storage
+      const { error: uploadError } = await supabase.storage
         .from('hackathon_files')
         .upload(fileName, file);
 

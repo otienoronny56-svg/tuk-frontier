@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, User, Eye, ArrowLeft, Share2 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 
@@ -127,7 +126,7 @@ export default function BlogPostDetail() {
       } else {
         const fallback = blogPostsData[postId];
         if (fallback) {
-          currentPost = { id: postId, ...fallback };
+          currentPost = { ...fallback, id: postId };
         }
       }
       setPost(currentPost);
@@ -147,7 +146,7 @@ export default function BlogPostDetail() {
       } else {
         const fallbackOthers = Object.values(blogPostsData)
           .filter(p => p.id !== postId)
-          .map(p => ({ id: p.id, ...p }));
+          .map(p => ({ ...p, id: p.id }));
         setOtherPosts(fallbackOthers);
       }
       setLoading(false);

@@ -27,7 +27,7 @@ function RulesEditor({ data, onSave }: { data: string[], onSave: (val: any) => v
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       {items.map((item, i) => (
-        <div key={i} style={{ display: 'flex', items: 'center', gap: '1rem' }}>
+        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <input className="form-input" style={{ flex: 1, marginBottom: 0, borderRadius: '8px', background: 'var(--muted)', border: '1px solid var(--glass-border)', color: 'var(--foreground)' }} placeholder="Rule description..." value={item} onChange={e => { const newItems = [...items]; newItems[i] = e.target.value; setItems(newItems); }} />
           <button onClick={() => setItems(items.filter((_, idx) => idx !== i))} className="btn btn-outline text-red-500 hover:bg-red-500 hover:text-white" style={{ padding: '0.5rem', borderRadius: '8px' }}><Trash2 size={16}/></button>
         </div>
@@ -427,7 +427,7 @@ export default function AdminDashboard() {
   const handleAddPerson = async (e: React.FormEvent) => {
     e.preventDefault();
     setActionLoading(true);
-    const payload = { ...newPerson };
+    const payload: any = { ...newPerson };
     
     // Handle File Upload
     if (personImageFile) {
@@ -787,7 +787,7 @@ export default function AdminDashboard() {
                         <div className="flex flex-wrap gap-2">
                           {projAssignments.length === 0 && <span style={{ fontSize: '0.85rem', color: 'var(--muted-foreground)', fontStyle: 'italic' }}>None assigned yet</span>}
                           {projAssignments.map(a => (
-                            <div key={a.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.15)', px: '0.75rem', py: '0.25rem', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.85rem', border: '1px solid var(--border)', fontWeight: 600, color: 'var(--foreground)' }}>
+                            <div key={a.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.85rem', border: '1px solid var(--border)', fontWeight: 600, color: 'var(--foreground)' }}>
                               {a.judge?.full_name} <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>({a.status})</span>
                               <button onClick={() => handleRemoveAssignment(a.id)} style={{ color: '#ef4444', border: 'none', background: 'transparent', cursor: 'pointer', padding: 0, marginLeft: '0.25rem', fontWeight: 'bold' }}>✕</button>
                             </div>
@@ -883,8 +883,8 @@ export default function AdminDashboard() {
                       {proj.projScores.length === 0 ? (
                         <p style={{ color: 'var(--muted-foreground)', fontStyle: 'italic', textAlign: 'center', margin: 0 }}>No judges have submitted scores for this project yet.</p>
                       ) : (
-                        proj.projScores.map((score, sIdx) => {
-                          const assignment = proj.projAssignments.find(a => a.id === score.assignment_id);
+                        proj.projScores.map((score: any, sIdx: number) => {
+                          const assignment = proj.projAssignments.find((a: any) => a.id === score.assignment_id);
                           return (
                             <div key={sIdx} style={{ background: 'rgba(128,128,128,0.1)', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--glass-border)' }}>
                               <div className="flex justify-between items-center mb-3">

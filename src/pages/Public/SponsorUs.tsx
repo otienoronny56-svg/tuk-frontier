@@ -97,7 +97,7 @@ export default function SponsorUs() {
                           padding: '1rem',
                           display: 'flex',
                           alignItems: 'center',
-                          justify: 'center',
+                          justifyContent: 'center',
                           ...cardDims
                         }}
                         whileHover={{ y: -5 }}
