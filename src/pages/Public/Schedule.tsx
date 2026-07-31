@@ -62,37 +62,19 @@ export default function Schedule() {
 
   return (
     <div className="container pt-8 pb-16">
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <h1 className="text-gradient">Programme & Schedule</h1>
         <p style={{ maxWidth: '700px', margin: '1rem auto' }} className="text-muted-foreground text-lg">
           Explore the full innovation journey — from Pre-Hackathon Bootcamps to the 72-Hour Summit and Post-Event Incubation.
         </p>
-
-        {/* Tab Buttons */}
-        <div className="flex justify-center gap-3 mt-8 flex-wrap">
-          <button 
-            onClick={() => setActiveTab('main')}
-            className={`px-6 py-3 rounded-xl font-bold transition-all text-sm flex items-center gap-2 ${activeTab === 'main' ? 'bg-tuk-gold text-black shadow-lg' : 'bg-slate-900/60 text-slate-300 border border-slate-800 hover:bg-slate-800'}`}
-          >
-            <Calendar size={18} /> 72-Hour Main Hackathon
-          </button>
-          <button 
-            onClick={() => setActiveTab('bootcamps')}
-            className={`px-6 py-3 rounded-xl font-bold transition-all text-sm flex items-center gap-2 ${activeTab === 'bootcamps' ? 'bg-tuk-gold text-black shadow-lg' : 'bg-slate-900/60 text-slate-300 border border-slate-800 hover:bg-slate-800'}`}
-          >
-            <BookOpen size={18} /> Pre-Hackathon Bootcamps
-          </button>
-          <button 
-            onClick={() => setActiveTab('pathway')}
-            className={`px-6 py-3 rounded-xl font-bold transition-all text-sm flex items-center gap-2 ${activeTab === 'pathway' ? 'bg-tuk-gold text-black shadow-lg' : 'bg-slate-900/60 text-slate-300 border border-slate-800 hover:bg-slate-800'}`}
-          >
-            <Briefcase size={18} /> Career Fair & Incubation Pathway
-          </button>
-        </div>
       </div>
 
-      {/* TAB 1: Main 72-Hour Schedule */}
-      {activeTab === 'main' && (
+      {/* Section 1: Main 72-Hour Schedule */}
+      <div className="mb-24">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-2">72-Hour Main Hackathon</h2>
+          <p className="text-sm text-muted-foreground">The core build weekend.</p>
+        </div>
         <div className="flex flex-col gap-8 max-w-4xl mx-auto">
           {loading ? (
              <div className="text-center py-12">Loading schedule...</div>
@@ -101,7 +83,7 @@ export default function Schedule() {
               <motion.div 
                 key={dayIndex}
                 className="glass-card"
-                style={{ padding: '2rem', marginBottom: '2rem', borderRadius: 'var(--radius-xl)' }}
+                style={{ padding: '2rem', borderRadius: 'var(--radius-xl)' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: dayIndex * 0.1 }}
@@ -149,60 +131,56 @@ export default function Schedule() {
             ))
           )}
         </div>
-      )}
+      </div>
 
-      {/* TAB 2: Pre-Hackathon Bootcamps */}
-      {activeTab === 'bootcamps' && (
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-2">Phase 1: Pre-Hackathon Bootcamps (Weeks 1–4)</h2>
-            <p className="text-sm text-muted-foreground">Comprehensive technical workshops preceding the 72-hour hackathon weekend.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {bootcamps.map((boot, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between">
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-slate-800 text-tuk-gold">{boot.weeks}</span>
-                    {boot.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{boot.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{boot.desc}</p>
-                </div>
-                <div className="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">Open to all registered TUK students & partner university participants</div>
-              </div>
-            ))}
-          </div>
+      {/* Section 2: Pre-Hackathon Bootcamps */}
+      <div className="mb-24 max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-2">Phase 1: Pre-Hackathon Bootcamps (Weeks 1–4)</h2>
+          <p className="text-sm text-muted-foreground">Comprehensive technical workshops preceding the 72-hour hackathon weekend.</p>
         </div>
-      )}
 
-      {/* TAB 3: Career Fair & Incubation Pathway */}
-      {activeTab === 'pathway' && (
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold mb-2">Phases 2–7: Mentorship Through Incubation</h2>
-            <p className="text-sm text-muted-foreground">The full ecosystem supporting project longevity, employment, and startup launch.</p>
-          </div>
-
-          <div className="space-y-6">
-            {pathwaySteps.map((step, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-full bg-tuk-gold/10 border border-tuk-gold/30 text-tuk-gold font-bold flex items-center justify-center flex-shrink-0">
-                  {i + 1}
+        <div className="grid md:grid-cols-2 gap-6">
+          {bootcamps.map((boot, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-slate-800 text-tuk-gold">{boot.weeks}</span>
+                  {boot.icon}
                 </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-lg font-bold">{step.title}</h3>
-                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-emerald-400 font-semibold">{step.time}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">{boot.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{boot.desc}</p>
               </div>
-            ))}
-          </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">Open to all registered TUK students & partner university participants</div>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Section 3: Career Fair & Incubation Pathway */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-2">Phases 2–7: Mentorship Through Incubation</h2>
+          <p className="text-sm text-muted-foreground">The full ecosystem supporting project longevity, employment, and startup launch.</p>
+        </div>
+
+        <div className="space-y-6">
+          {pathwaySteps.map((step, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 flex gap-4 items-start">
+              <div className="w-10 h-10 rounded-full bg-tuk-gold/10 border border-tuk-gold/30 text-tuk-gold font-bold flex items-center justify-center flex-shrink-0">
+                {i + 1}
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-1">
+                  <h3 className="text-lg font-bold">{step.title}</h3>
+                  <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-emerald-400 font-semibold">{step.time}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
