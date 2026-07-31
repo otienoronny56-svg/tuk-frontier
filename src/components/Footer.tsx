@@ -25,7 +25,7 @@ export default function Footer() {
               <h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 800 }} className="text-gradient">TUK Frontier</h2>
             </Link>
             <p className="text-muted-foreground text-sm mb-6" style={{ lineHeight: '1.6', maxWidth: '320px' }}>
-              The premier 48-hour student hacking and innovation summit at the Technical University of Kenya. Build the future, together.
+              The premier 72-hour student engineering & technology innovation summit at TUK. Jointly convened by FEBE Faculty Rep Office, KUZA–TUK & ASA–TUK.
             </p>
             <div className="flex gap-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-slate-400 hover:text-white" style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', transition: 'all 0.2s' }}>
@@ -115,7 +115,7 @@ export default function Footer() {
         {/* Bottom copyright and legal info */}
         <div className="footer-bottom">
           <div className="text-muted-foreground text-xs text-center sm:text-left">
-            &copy; {currentYear} TUK Frontier. Co-organized by the Office of the Faculty Representative (FEBE) & KUZA-TUK.
+            &copy; {currentYear} TUK Frontier. Jointly convened by FEBE Office of Faculty Rep, KUZA–TUK & ASA–TUK.
           </div>
           <div className="flex gap-6 text-xs">
             <Link to="/guide" className="text-muted-foreground hover:text-foreground" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Rules & Regs</Link>

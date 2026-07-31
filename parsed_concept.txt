@@ -1,0 +1,247 @@
+TUK FRONTIER HACKATHON
+OFFICIAL CONCEPT NOTE
+Jointly Convened by:
+Office of the Faculty Representative
+Faculty of Engineering and the Built Environment (FEBE), Technical University of Kenya
+KUZA–TUK Chapter
+ASA–TUK
+(Architecture Students Association of The Technical University of Kenya)
+
+EXECUTIVE SUMMARY
+TUK Frontier Hackathon is Kenya's premier student-led engineering and technology innovation event, jointly convened by the Office of the Faculty Representative, the KUZA–TUK Chapter and ASA–TUK, within the Faculty of Engineering and the Built Environment (FEBE) at the Technical University of Kenya.
+The hackathon convenes engineering, technology and built-environment students alongside industry leaders, government agencies, development partners and innovation ecosystems to co-create technology-driven solutions to Kenya's most pressing challenges.
+Aligned with Kenya Vision 2030, the Bottom-Up Economic Transformation Agenda (BETA), the Sustainable Development Goals and the African Union Agenda 2063, the hackathon transforms student potential into market-ready solutions, startups and employment-ready graduates.
+
+Key Facts
+KEY FACTS
+DETAILS
+Event Name
+TUK Frontier Hackathon
+Organizers
+Office of the Faculty Representative (FEBE), KUZA–TUK Chapter & ASA–TUK
+Host Institution
+Technical University of Kenya, Nairobi
+Theme
+Engineering the Future: Innovation at the Frontier
+Format
+Multi-day bootcamp, hackathon, demo day, career fair & exhibition
+Target Participants
+Engineering, technology, architecture & built-environment students; innovators
+Expected Attendance
+300–500 participants; 50+ mentors, judges & speakers
+Strategic Alignment
+Vision 2030, BETA, SDGs, AU Agenda 2063
+BACKGROUND AND RATIONALE
+Africa's median age of 19 gives it the largest youth demographic dividend in history, and Kenya — anchored by Nairobi's Silicon Savannah — has proven that homegrown innovation can compete globally in fintech, agritech, healthtech and geospatial technology. Yet a persistent gap remains between university theory and the applied, technology-driven competencies the labour market demands. Graduates routinely enter the workforce without hands-on exposure to collaborative problem-solving, rapid prototyping, entrepreneurship, or tools such as cloud computing, AI, GIS and IoT.
+Hackathons at leading universities — MIT, Stanford, Harvard — have proven that intensive, challenge-driven formats compress semesters of learning into days of doing, connecting students to real industry problems and catalyzing startup formation. TUK Frontier Hackathon is FEBE's answer to this imperative: a purpose-built platform that channels TUK's student talent directly into Kenya's development priorities.
+Kenya's tech sector is growing at an estimated 8.5% annually, with Nairobi ranked among Africa's top five startup cities and supported by initiatives such as Konza Technopolis and the Kenya National Innovation Agency (KeNIA). Yet the university-to-startup talent pipeline remains under-structured. TUK Frontier Hackathon addresses this gap as FEBE's flagship, annually recurring innovation platform.
+ABOUT THE ORGANIZING INSTITUTIONS
+The Technical University of Kenya
+TUK is a public university established under the Universities Act, 2012, and a successor institution to the Kenya Polytechnic University College, with a history spanning more than five decades. Located in Nairobi's Central Business District, TUK is anchored on practical, applied and technical education, producing graduates who are industry-ready from day one.
+Faculty of Engineering and the Built Environment (FEBE)
+FEBE is one of TUK's flagship faculties, comprising Civil and Structural Engineering, Electrical and Electronics Engineering, Mechanical Engineering, Geospatial Engineering, Geoinformatics, Architecture, and Building and Construction Technology. It serves as TUK's primary engine for innovation in infrastructure, spatial planning and emerging technology convergence.
+Office of the Faculty Representative — FEBE
+The constitutionally recognized student leadership structure within FEBE, bridging the student body, Faculty administration, industry partners and the broader TUK community. As co-convener, it provides institutional authority, mobilizes the student community, coordinates cross-departmental logistics, and safeguards the hackathon's student-led character.
+KUZA–TUK Chapter
+KUZA is a pan-African, student-led movement harnessing geospatial technology, earth observation, GIS, remote sensing and spatial data science for sustainable development. As co-convener, the KUZA–TUK Chapter anchors the hackathon's technical and geospatial dimension — contributing domain expertise, industry networks, challenge design and mentorship coordination.
+KUZA–TUK Chapter — Areas of Focus
+• Geospatial Technology & GIS Innovation      • Earth Observation & Remote Sensing
+• Spatial Data Science & Digital Mapping      • AI & Machine Learning for Geospatial Applications
+• Drone Technology & UAV Mapping      • Youth Capacity Building in STEM & Spatial Technologies
+
+ASA–TUK (Architecture Students Association of The Technical University of Kenya)
+ASA–TUK is the representative student body for TUK's Department of Architecture, championing design excellence, sustainable building practices and creative approaches to the built environment. As co-convener, ASA–TUK anchors the hackathon's architectural and urban-design dimension — contributing design-thinking methodology, sustainable infrastructure expertise and creative direction to challenge tracks addressing smart buildings, urban planning and climate-responsive design.
+ASA–TUK — Areas of Focus
+• Architectural Design & Innovation      • Sustainable & Green Building Practices
+• Urban & Spatial Planning      • Building Information Modeling (BIM)
+• Smart Buildings & Construction Technology      • Design Thinking & Creative Problem-Solving
+VISION, MISSION AND STRATEGIC DIRECTION
+Why 'Frontier'?
+A frontier is the edge of the known — the threshold of possibility where the curious push beyond convention. In naming this hackathon 'Frontier', the organizers signal a deliberate ambition: for TUK students not merely to learn about emerging technologies, but to stand at their edge — building, experimenting, iterating and solving problems that matter. Ours is a frontier defined by artificial intelligence, geospatial intelligence, climate technology, smart cities and space technology.
+Vision
+To be East Africa's leading student-driven innovation platform, producing technology solutions, startup enterprises and employment-ready graduates that power Kenya's and Africa's digital transformation.
+Mission
+To convene TUK's most innovative students and connect them to industry, government and development partners through a structured, challenge-driven hackathon experience that builds technical skills, entrepreneurial competencies and a lifelong culture of innovation.
+Theme
+Engineering the Future: Innovation at the Frontier
+
+Core Values
+VALUE
+DESCRIPTION
+Excellence
+The highest standards in problem definition, solution quality and impact.
+Inclusion
+Welcoming all disciplines, backgrounds and institutions.
+Collaboration
+The best innovations emerge from diverse teams, not lone genius.
+Integrity
+Ethical technology development, fair competition, transparency.
+Impact
+Success measured by real-world difference, not elegance of code.
+Boldness
+Ambitious challenges, embracing failure, relentless iteration.
+Strategic Objectives
+Build a world-class annual innovation platform earning national and continental recognition within five years.
+Develop market-ready competencies in AI, cloud computing, GIS, IoT, data science and software engineering.
+Connect students to Kenya's leading technology companies, startups, government agencies and development partners.
+Catalyze startup formation through incubation pathways, seed funding access and mentorship for top teams.
+Build a structured talent pipeline enabling employers to identify, assess and recruit exceptional graduates.
+Generate solutions to Kenya's challenges in urban planning, agriculture, health, climate and infrastructure.
+
+CHALLENGE TRACKS
+TUK Frontier Hackathon organizes teams around six strategic challenge tracks, each aligned with Kenya's national development priorities. Interdisciplinary teams are strongly encouraged.
+TRACK
+FOCUS
+1. Geospatial & Earth Observation Innovation
+GIS, remote sensing, satellite imagery, drone data and spatial analytics for urban planning, disaster risk, environmental monitoring and climate adaptation. Anchored by KUZA–TUK.
+2. Artificial Intelligence & Data Science
+AI applications, ML models, NLP and data analytics for health, education, agriculture, finance and public service delivery.
+3. Smart Infrastructure & Built Environment
+Smart buildings, structural health monitoring, BIM-enabled project management and sustainable energy integration. Anchored by ASA–TUK.
+4. Climate Tech & Environmental Engineering
+Clean energy, water management, carbon monitoring, green infrastructure and sustainable agriculture solutions.
+5. Health Technology & Bioinformatics
+Medical device prototyping, telemedicine, health data analytics, disease surveillance and AI-assisted diagnostics.
+6. Financial Technology & Digital Inclusion
+Fintech for financial inclusion, digital payments, alternative credit scoring and SME finance.
+EVENT PROGRAMME
+The hackathon is a multi-phase innovation journey beginning weeks before the event itself and continuing through post-event incubation, maximizing preparation, solution quality and lasting support.
+Phase 1: Pre-Hackathon Bootcamps (Weeks 1–4)
+BOOTCAMP
+CONTENT AREAS
+GIS & Earth Observation
+ArcGIS, QGIS, Google Earth Engine, satellite imagery, drone data processing
+AI & Machine Learning
+Python, TensorFlow, Scikit-learn, NLP, Computer Vision, LLM API integration
+Cloud & DevOps
+AWS / Azure / GCP, Docker, Kubernetes, CI/CD, API development
+IoT & Hardware
+Arduino, Raspberry Pi, sensor integration, prototyping, 3D printing
+Entrepreneurship
+Business model canvas, pitch decks, market research, startup valuation, legal basics
+Phases 2–7: Mentorship Through Post-Event Incubation
+PHASE
+SUMMARY
+Mentorship Programme
+Each team is matched with an industry, academic or startup mentor for technical, business and presentation guidance throughout.
+The Hackathon (72 Hours)
+Registered teams build prototypes against defined challenge statements, with access to cloud resources, datasets, APIs, hardware and mentors.
+Demo Day & Awards Ceremony
+Finalists pitch to judges (8-minute presentation + 5-minute Q&A). Overall, Track, Technical Innovation, Social Impact and Best Female-Led Team awards presented, alongside cash prizes, credits and incubation offers.
+Startup Showcase & Exhibition
+A curated public showcase where investors, industry and government identify solutions with commercial or policy potential.
+Career & Recruitment Fair
+Concurrent with Demo Day: employer booths, CV drops, on-site interviews and internship offers.
+Research Showcase
+Postgraduate students and faculty present research to industry partners for collaboration or co-publication.
+72-Hour Hackathon Schedule
+PERIOD
+ACTIVITY
+Day 1 — Morning
+Opening Ceremony, Keynotes, Challenge Reveal & Team Registration
+Day 1 — Afternoon
+Hackathon Begins, Problem Definition Workshops, Mentor Check-Ins
+Day 2 — Morning
+Progress Pitches, Mid-Hackathon Expert Panels
+Day 2 — Afternoon
+Deep Build Sessions, Technical Clinics, Industry Tours
+Day 3 — Morning
+Final Builds, Documentation, Prototype Polishing
+Day 3 — Afternoon
+Submission, Judging, Career & Recruitment Fair
+Post-event, top-performing teams are enrolled in a structured incubation and acceleration pathway including innovation-hub workspace, connections to partner acceleration programmes, seed funding applications and continued mentorship.
+TARGET PARTICIPANTS & EXPECTED PARTICIPATION
+TUK Frontier Hackathon is primarily designed for TUK students, deliberately opening its doors to a broader innovation community to enrich solution quality:
+Undergraduate and postgraduate engineering and technology students at TUK (primary audience)
+Students from all FEBE departments: Civil, Electrical, Mechanical, Geospatial, Architecture, Construction
+Interdisciplinary students from Applied Sciences, IT, Business and Social Sciences
+Students from partner universities across Kenya and East Africa; early-stage founders; recent TUK graduates
+
+PARTICIPANT CATEGORY
+ESTIMATED NUMBER
+Hackathon Teams
+60–80 teams (3–5 members each)
+Total Hackathon Participants
+250–400 registered participants
+Industry Mentors & Experts
+40–60 professionals
+Judges
+15–25 senior professionals
+Keynote & Panel Speakers
+10–20 thought leaders
+Career Fair Participants
+500+ students
+Exhibition & Demo Day Visitors
+300+ attendees
+Live Stream Audience
+1,000+ online viewers
+Media & Press Representatives
+10–15 journalists
+
+ORGANIZING STRUCTURE
+TUK Frontier Hackathon operates through a structured organizing committee combining student leadership from the Office of the Faculty Representative, the technical and geospatial expertise of KUZA–TUK Chapter, and the design and built-environment expertise of ASA–TUK, supported by faculty advisors and industry partners.
+COMMITTEE
+RESPONSIBILITIES
+Strategic Steering Committee
+Overall vision, partnerships, budget oversight, institutional representation across all three co-conveners
+Technical Committee
+Challenge track design, judging criteria, API/dataset integration, platform management
+Bootcamp & Training Committee
+Curriculum design, trainer recruitment, scheduling, materials
+Mentorship Committee
+Mentor recruitment, team matching, session scheduling, quality assurance
+Events & Logistics Committee
+Venue, catering, AV, transport, registration, scheduling
+Partnerships & Sponsorship Committee
+Corporate outreach, MOU drafting, partner deliverables, acknowledgments
+Marketing & Communications Committee
+Branding, social media, press, photography, videography, live streaming
+Research & Innovation Committee
+Research showcase curation, white paper production, impact reporting
+Career Fair Committee
+Employer engagement, booth allocation, recruitment activities, talent database
+Monitoring, Evaluation & Sustainability
+A structured M&E framework tracks participant satisfaction, solution quality, startup formation, employment outcomes, media reach and partner satisfaction, with post-event impact reports shared with all stakeholders. Long-term sustainability rests on diversified funding, alumni engagement, institutional FEBE support, and annual growth in the partner base — growing the hackathon from a faculty event into TUK's flagship annual innovation festival.
+STRATEGIC ALIGNMENT
+TUK Frontier Hackathon directly supports Kenya Vision 2030's Social and Economic Pillars by developing high-quality human capital and technology entrepreneurship, and advances the Bottom-Up Economic Transformation Agenda (BETA) by equipping students with entrepreneurial skills and connecting them to employment and startup opportunities across agriculture, small business, housing and social services.
+Sustainable Development Goals
+SDG
+ALIGNMENT
+SDG 4 — Quality Education
+Bootcamps, mentorship and the hackathon format enhance technical education outcomes.
+SDG 8 — Decent Work & Growth
+Career Fair and incubation pathway create employment and entrepreneurship opportunities.
+SDG 9 — Industry & Innovation
+Solutions address infrastructure challenges and promote technological innovation.
+SDG 11 — Sustainable Cities
+Smart Infrastructure and Geospatial tracks generate urban planning solutions.
+SDG 13 — Climate Action
+The Climate Tech track produces climate adaptation and mitigation solutions.
+SDG 17 — Partnerships for Goals
+The multi-stakeholder partnership model exemplifies collaborative action.
+The hackathon further contributes to the African Union's Agenda 2063 by building Africa's next generation of technology innovators and positioning Kenya as a centre of excellence for student-led innovation in East Africa.
+EXPECTED IMPACT
+IMPACT AREA
+EXPECTED OUTCOMES
+Talent Development
+300–500 students with enhanced competencies in AI, GIS, cloud, IoT and entrepreneurship
+Startup Creation
+5–10 viable startups launched with incubation pathway access
+Employment
+30–50 direct internship and employment connections via the Career Fair
+Research
+3–5 research collaborations initiated between students, faculty and industry
+Innovation Output
+60–80 prototype solutions addressing Kenya's development challenges
+Media Reach
+National media coverage; social media reach of 50,000+ impressions
+Industry Engagement
+20+ organizations engaged as partners, mentors, judges and sponsors
+Long-Term Legacy
+A self-sustaining annual event growing into TUK's flagship programme
+CONCLUSION & INVITATION TO COLLABORATE
+TUK Frontier Hackathon represents more than an event — it is an investment in the intellectual and entrepreneurial future of Kenya. By building a world-class innovation platform within FEBE, the Office of the Faculty Representative, KUZA–TUK Chapter and ASA–TUK are creating the pipeline through which TUK's students will make their most significant contribution to Kenya's national development.
+We invite universities, government agencies, development organizations, research institutions and civil society to partner with us — through technical expertise, mentorship, challenge statements, research partnerships or institutional endorsement — to enrich our programming and amplify our impact.
+Join Us
+The Technical University of Kenya, the Faculty of Engineering and the Built Environment, the Office of the Faculty Representative, the KUZA–TUK Chapter and ASA–TUK extend a warm invitation to all organizations and individuals who share our commitment to youth innovation, technology-driven development and Kenya's future prosperity.
+For collaboration inquiries, please contact the TUK Frontier Hackathon Organizing Committee through the FEBE Office of the Faculty Representative, the KUZA–TUK Chapter or ASA–TUK.

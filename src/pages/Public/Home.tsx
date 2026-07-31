@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon } from 'lucide-react';
+import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
@@ -33,7 +33,7 @@ export default function Home() {
       { text: 'Compiling winning code architecture...', color: '#bbf7d0' },
       { text: 'Connecting to industry mentors...', color: '#93c5fd' },
       { text: 'Resolving merge conflicts... [SUCCESS]', color: '#4ade80' },
-      { text: 'Booting up 48-hour grind mode...', color: '#fdba74' },
+      { text: 'Booting up 72-hour grind mode...', color: '#fdba74' },
       { text: 'Pushing final commit to production...', color: '#c084fc' }
     ];
 
@@ -75,12 +75,12 @@ export default function Home() {
         setTimeline(flatEvents);
       } else {
         setTimeline([
-          { time: 'Friday, Oct 2 • 9:00 AM', title: 'Kickoff & Team Formation', desc: 'Arrive at Technical University of Kenya. Grab your developer badges, find your teammates, or form one on the spot. Sponsors present their API toolkits.', icon: 'rocket' },
-          { time: 'Friday, Oct 2 • 12:00 PM', title: 'Coding Begins', desc: 'The countdown clock starts ticking. Turn on developer mode. Lunch is served, and mentor channels are declared open.', icon: 'code' },
-          { time: 'Friday, Oct 2 • 8:00 PM', title: 'Midnight Pizza & Chill', desc: 'Grab hot pizza and soda. Take a break, listen to a lightning talk, or test your skills in mini gaming contests.', icon: 'zap' },
-          { time: 'Saturday, Oct 3 • 10:00 AM', title: 'Midpoint Review & Pitch Mentorship', desc: 'Sync with mentors and guest CTOs to refine your prototype. Prepare your pitch slide and video submission.', icon: 'trophy' },
-          { time: 'Saturday, Oct 3 • 4:00 PM', title: 'Submission Deadline', desc: 'Submit repository links, PDF pitch deck, and video demo. No late commits accepted!', icon: 'check' },
-          { time: 'Saturday, Oct 3 • 6:00 PM', title: 'Judging & Closing Awards', desc: 'Top teams pitch live on stage to a panel of expert VCs and tech executives. Winners crowned and prizes distributed!', icon: 'rocket' }
+          { time: 'Day 1 (Friday) • 08:30 AM', title: 'Opening Ceremony & Keynotes', desc: 'Welcome remarks from FEBE Faculty Reps, KUZA–TUK, and ASA–TUK. Keynote speeches from tech and industry leaders.', icon: 'rocket' },
+          { time: 'Day 1 (Friday) • 11:30 AM', title: 'Challenge Reveal & Hackathon Begins', desc: 'Track challenges unveiled. The 72-hour hackathon clock begins. Mentor channels and cloud resources open.', icon: 'code' },
+          { time: 'Day 2 (Saturday) • 09:00 AM', title: 'Progress Pitches & Technical Clinics', desc: 'Mid-hackathon progress check-ins with mentors. Specialized clinics in GIS, AI, BIM, and hardware prototyping.', icon: 'zap' },
+          { time: 'Day 2 (Saturday) • 04:00 PM', title: 'Pitch Deck & Prototype Clinics', desc: 'Refine solution architecture, user interface, and pitch decks with startup founders and technical leads.', icon: 'trophy' },
+          { time: 'Day 3 (Sunday) • 12:00 PM', title: 'Final Project Submission Deadline', desc: 'Submit code repositories, pitch decks, and demo videos for judge evaluation.', icon: 'check' },
+          { time: 'Day 3 (Sunday) • 01:30 PM', title: 'Demo Day, Career Fair & Awards', desc: 'Finalist pitches live on stage, concurrent employer recruitment fair & research showcase, followed by awards ceremony!', icon: 'rocket' }
         ]);
       }
     };
@@ -148,16 +148,16 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="inline-block px-4 py-1.5 rounded-full border border-tuk-navy/20 bg-background/50 backdrop-blur-md text-tuk-navy font-semibold mb-3 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.08em] sm:tracking-[0.15em] shadow-sm max-w-full text-left" style={{ wordBreak: 'break-word' }}>
-              October 2-3, 2026 • Technical University of Kenya
+              Jointly Convened by FEBE Faculty Rep Office • KUZA–TUK • ASA–TUK
             </div>
 
             <h1 className="font-extrabold mb-6 leading-[1.1] tracking-tight text-left" style={{ fontSize: 'clamp(2.2rem, 7vw, 5rem)', color: 'var(--foreground)', wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
               TUK <span style={{ color: '#4ade80' }}>Frontier.</span><br />
-              <span style={{ color: 'var(--foreground)', opacity: 0.8, fontSize: 'clamp(1.3rem,4.5vw,3.5rem)' }}>Shape the Future.</span>
+              <span style={{ color: 'var(--foreground)', opacity: 0.8, fontSize: 'clamp(1.3rem,4.5vw,3.5rem)' }}>Innovation at the Frontier.</span>
             </h1>
 
             <p className="text-base md:text-xl mb-10 font-medium max-w-xl leading-relaxed text-left" style={{ color: 'var(--muted-foreground)' }}>
-              A 48-hour community-driven programming and designing hackathon, encouraging hackers to shape their ideas into reality. Connect with industry leaders and win massive prizes.
+              Kenya's premier 72-hour student engineering & technology innovation summit. Transforming student talent into market-ready solutions, startups, and employment-ready graduates.
             </p>
 
             <div className="flex flex-row w-full justify-start gap-3 sm:gap-4 mb-4">
@@ -394,9 +394,12 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-8">
           {(tracks.length > 0 ? tracks : [
-            { id: '1', title: 'Artificial Intelligence', prize_pool: 'KSh 2,500,000 Prize Pool', description: 'Build the next generation of autonomous agents, LLM wrappers, or computer vision tools.', iconType: 'cpu' },
-            { id: '2', title: 'FinTech & Web3', prize_pool: 'KSh 2,000,000 Prize Pool', description: 'Revolutionize payments, create novel DeFi protocols, or build financial inclusion tools.', iconType: 'coins' },
-            { id: '3', title: 'Green Tech', prize_pool: 'KSh 2,000,000 Prize Pool', description: 'Leverage technology to fight climate change, optimize energy, or promote sustainability.', iconType: 'leaf' }
+            { id: '1', title: 'Geospatial & Earth Observation', prize_pool: 'Track Awards & Incubation', description: 'GIS, remote sensing, satellite imagery, drone data, and spatial analytics for urban planning and climate adaptation. Anchored by KUZA–TUK.', iconType: 'globe' },
+            { id: '2', title: 'AI & Data Science', prize_pool: 'Track Awards & Incubation', description: 'AI applications, machine learning models, NLP, computer vision, and data analytics for health, agriculture, and public service.', iconType: 'cpu' },
+            { id: '3', title: 'Smart Infrastructure', prize_pool: 'Track Awards & Incubation', description: 'Smart buildings, structural health monitoring, BIM-enabled project management, and sustainable energy. Anchored by ASA–TUK.', iconType: 'code' },
+            { id: '4', title: 'Climate Tech & Environment', prize_pool: 'Track Awards & Incubation', description: 'Clean energy, water resources management, carbon monitoring, green infrastructure, and sustainable agriculture.', iconType: 'leaf' },
+            { id: '5', title: 'Health Tech & Bioinformatics', prize_pool: 'Track Awards & Incubation', description: 'Medical device prototyping, telemedicine, health data analytics, disease surveillance, and AI-assisted diagnostics.', iconType: 'zap' },
+            { id: '6', title: 'Fintech & Digital Inclusion', prize_pool: 'Track Awards & Incubation', description: 'Fintech for financial inclusion, digital payments, alternative credit scoring, SME financial services, and digital access.', iconType: 'coins' }
           ]).map((track: any) => {
             const hasImage = !!track.image_url;
             const getTrackIcon = (title: string, iconType?: string) => {
@@ -485,26 +488,26 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-1 p-8 rounded-[2rem] bg-slate-900/30 border border-slate-800/80 flex flex-col justify-between min-h-[220px]">
-              <h3 className="text-5xl md:text-6xl font-black text-[#4ade80] tracking-tight">50+</h3>
+              <h3 className="text-5xl md:text-6xl font-black text-[#4ade80] tracking-tight">40-60</h3>
               <div>
-                <p className="text-lg font-semibold text-slate-200">Expert Mentors</p>
-                <p className="text-sm text-slate-400 mt-2">CTOs, software engineers, and founders guiding you full time.</p>
+                <p className="text-lg font-semibold text-slate-200">Industry Mentors</p>
+                <p className="text-sm text-slate-400 mt-2">Engineering leaders and founders guiding teams full-time.</p>
               </div>
             </div>
 
             <div className="md:col-span-1 p-8 rounded-[2rem] bg-slate-900/30 border border-slate-800/80 flex flex-col justify-between min-h-[220px]">
-              <h3 className="text-5xl md:text-6xl font-black text-purple-400 tracking-tight">100+</h3>
+              <h3 className="text-5xl md:text-6xl font-black text-purple-400 tracking-tight">60-80</h3>
               <div>
-                <p className="text-lg font-semibold text-slate-200">Hacker Teams</p>
-                <p className="text-sm text-slate-400 mt-2">Collaborating and competing from top tier regional tech hubs.</p>
+                <p className="text-lg font-semibold text-slate-200">Innovator Teams</p>
+                <p className="text-sm text-slate-400 mt-2">250–400 engineering, tech, and architecture students.</p>
               </div>
             </div>
 
             <div className="md:col-span-1 p-8 rounded-[2rem] bg-slate-900/30 border border-slate-800/80 flex flex-col justify-between min-h-[220px]">
-              <h3 className="text-5xl md:text-6xl font-black text-blue-400 tracking-tight">48h</h3>
+              <h3 className="text-5xl md:text-6xl font-black text-blue-400 tracking-tight">72h</h3>
               <div>
-                <p className="text-lg font-semibold text-slate-200">Pure Creation</p>
-                <p className="text-sm text-slate-400 mt-2">Non-stop workspace with constant high speed internet.</p>
+                <p className="text-lg font-semibold text-slate-200">Multi-Day Summit</p>
+                <p className="text-sm text-slate-400 mt-2">Non-stop workspace, bootcamps, career fair & demo day.</p>
               </div>
             </div>
 
@@ -525,7 +528,7 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Event <span className="text-gradient">Timeline</span></h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Track the 48-hour journey from idea to deployment.</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Track the 72-hour journey from idea to post-event incubation.</p>
           </div>
 
           {/* Group events by day — always side by side on wide screens */}
@@ -600,9 +603,214 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 5.3. Summit Exploration Pillars Grid */}
+      <section className="py-24 border-y border-glass-border relative overflow-hidden bg-slate-950">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-60 z-0"></div>
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-tuk-gold/5 rounded-full blur-[120px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
 
+        <div className="container relative z-10 mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-16 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="text-xs font-bold px-4 py-2 rounded-full bg-slate-900/80 text-tuk-gold border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] uppercase tracking-[0.2em] inline-block mb-4 backdrop-blur-sm">
+                Summit Highlights & Exploration
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight">
+                Explore TUK Frontier <span className="text-transparent bg-clip-text bg-gradient-to-r from-tuk-gold via-yellow-200 to-amber-500">2026</span>
+              </h2>
+            </motion.div>
+          </div>
 
-      {/* 5.3. FAQ Accordion Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+            {/* Card 1: About & Conveners */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-amber-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(245,158,11,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/30 text-amber-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(245,158,11,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:rotate-3">
+                  <Target size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-amber-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Mission & Conveners
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-amber-400 transition-colors">About the Summit</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  Jointly convened by FEBE Office of Faculty Rep, KUZA–TUK, and ASA–TUK. Discover our 6 core values and Vision 2030 strategic alignment.
+                </p>
+              </div>
+              <Link to="/about" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors mt-auto w-fit group/link">
+                Read Story & Mission 
+                <span className="bg-amber-500/10 p-1.5 rounded-full group-hover/link:bg-amber-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Card 2: Pre-Hackathon Bootcamps */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(59,130,246,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(59,130,246,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-3">
+                  <Code size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-blue-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Weeks 1–4 Curriculum
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-blue-400 transition-colors">Pre-Hackathon Bootcamps</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  Master GIS & Earth Observation, AI/ML, Cloud DevOps, IoT/Hardware/BIM, and Tech Entrepreneurship prior to hackathon weekend.
+                </p>
+              </div>
+              <Link to="/schedule" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors mt-auto w-fit group/link">
+                View Bootcamp Syllabus 
+                <span className="bg-blue-500/10 p-1.5 rounded-full group-hover/link:bg-blue-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Card 3: Mentors & Committees */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-purple-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(168,85,247,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(168,85,247,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:rotate-3">
+                  <Zap size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-purple-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Leadership & Experts
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-purple-400 transition-colors">Mentors & Committees</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  1-on-1 guidance from 40+ CTOs and software engineers alongside the 9 student-led organizing committees behind the summit.
+                </p>
+              </div>
+              <Link to="/people" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-purple-400 hover:text-purple-300 transition-colors mt-auto w-fit group/link">
+                Meet Mentors & Leaders 
+                <span className="bg-purple-500/10 p-1.5 rounded-full group-hover/link:bg-purple-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Card 4: Career Fair & Incubation */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(16,185,129,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(16,185,129,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-3">
+                  <Rocket size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-emerald-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Jobs & Acceleration
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Career Fair & Incubation</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  Direct CV dropboxes, on-site recruitment interviews, internship placements, and 6-month startup incubation for top teams.
+                </p>
+              </div>
+              <Link to="/schedule" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors mt-auto w-fit group/link">
+                Explore Placement & Incubation 
+                <span className="bg-emerald-500/10 p-1.5 rounded-full group-hover/link:bg-emerald-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Card 5: Hacker Handbook & Rules */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-cyan-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(6,182,212,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:rotate-3">
+                  <Shield size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-cyan-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Logistics & Guidelines
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">Hacker Handbook & Rules</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  Team sizing (3–5 members), free catering/meals, hardware lab access, venue safety, and Demo Day evaluation rubrics.
+                </p>
+              </div>
+              <Link to="/guide" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors mt-auto w-fit group/link">
+                Read Hacker Handbook 
+                <span className="bg-cyan-500/10 p-1.5 rounded-full group-hover/link:bg-cyan-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Card 6: Partner & Sponsor Us */}
+            <motion.div 
+              className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-rose-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(244,63,94,0.3)] relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-500/5 border border-rose-500/30 text-rose-400 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(244,63,94,0.15)] group-hover:scale-110 transition-transform duration-500 group-hover:-rotate-3">
+                  <Trophy size={28} strokeWidth={2.5} />
+                </div>
+                <span className="text-[11px] font-bold text-rose-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Corporate Partnerships
+                </span>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-rose-400 transition-colors">Sponsor TUK Frontier</h3>
+                <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
+                  Recruit top engineering talent, sponsor custom API challenge tracks, host workshops, and gain high-impact brand alignment.
+                </p>
+              </div>
+              <Link to="/sponsor" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-rose-400 hover:text-rose-300 transition-colors mt-auto w-fit group/link">
+                Become a Partner / Sponsor 
+                <span className="bg-rose-500/10 p-1.5 rounded-full group-hover/link:bg-rose-500/20 transition-colors group-hover/link:translate-x-1">
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5.8. FAQ Accordion Section */}
       <section className="pt-16 pb-8 border-t border-glass-border bg-tuk-navy-light/10 relative overflow-hidden">
         <div className="container relative z-10 max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
