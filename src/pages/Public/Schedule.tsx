@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, BookOpen, Briefcase } from 'lucide-react';
+import { Calendar, Clock, MapPin, BookOpen } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 
 export default function Schedule() {
-  const [activeTab, setActiveTab] = useState<'main' | 'bootcamps' | 'pathway'>('main');
+
   const [scheduleData, setScheduleData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
