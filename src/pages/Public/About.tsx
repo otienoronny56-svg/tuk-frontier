@@ -149,24 +149,36 @@ export default function About() {
         <h2 className="text-3xl font-bold text-center mb-4">Expected Participation & Scale</h2>
         <p className="text-center text-muted-foreground max-w-xl mx-auto mb-8">TUK Frontier Hackathon 2026 Participation Metrics</p>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm border-collapse">
-            <thead>
-              <tr className="border-b border-slate-800 text-tuk-gold uppercase tracking-wider text-xs">
-                <th className="py-3 px-4">Participant Category</th>
-                <th className="py-3 px-4">Estimated Target Number</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800/60 text-slate-300">
-              <tr><td className="py-3 px-4 font-medium">Registered Hackathon Teams</td><td className="py-3 px-4 text-emerald-400 font-bold">60–80 teams (3–5 members each)</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Total Registered Hackers</td><td className="py-3 px-4 text-emerald-400 font-bold">250–400 participants</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Industry Mentors & Technical Experts</td><td className="py-3 px-4 text-amber-400 font-bold">40–60 professionals</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Judges & Evaluation Panel</td><td className="py-3 px-4 text-amber-400 font-bold">15–25 senior executives</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Career & Recruitment Fair Participants</td><td className="py-3 px-4 text-blue-400 font-bold">500+ engineering & tech students</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Exhibition & Demo Day Visitors</td><td className="py-3 px-4 text-blue-400 font-bold">300+ investors, industry & faculty</td></tr>
-              <tr><td className="py-3 px-4 font-medium">Online Live Stream Audience</td><td className="py-3 px-4 text-purple-400 font-bold">1,000+ viewers across East Africa</td></tr>
-            </tbody>
-          </table>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-emerald-500/20 hover:border-emerald-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-emerald-400 mb-2">60–80</span>
+            <span className="text-sm font-medium text-slate-300">Registered Teams</span>
+            <span className="text-xs text-muted-foreground mt-1">(3–5 members each)</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-emerald-500/20 hover:border-emerald-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-emerald-400 mb-2">250–400</span>
+            <span className="text-sm font-medium text-slate-300">Total Hackers</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-amber-500/20 hover:border-amber-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-amber-400 mb-2">40–60</span>
+            <span className="text-sm font-medium text-slate-300">Industry Mentors</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-amber-500/20 hover:border-amber-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-amber-400 mb-2">15–25</span>
+            <span className="text-sm font-medium text-slate-300">Judges & Execs</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-blue-500/20 hover:border-blue-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-blue-400 mb-2">500+</span>
+            <span className="text-sm font-medium text-slate-300">Career Fair Attendees</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-blue-500/20 hover:border-blue-500/40 transition-colors text-center flex flex-col justify-center">
+            <span className="text-3xl font-bold text-blue-400 mb-2">300+</span>
+            <span className="text-sm font-medium text-slate-300">Demo Day Visitors</span>
+          </div>
+          <div className="p-6 rounded-2xl bg-slate-950/60 border border-purple-500/20 hover:border-purple-500/40 transition-colors text-center flex flex-col justify-center lg:col-span-2">
+            <span className="text-3xl font-bold text-purple-400 mb-2">1,000+</span>
+            <span className="text-sm font-medium text-slate-300">Live Stream Audience</span>
+          </div>
         </div>
       </section>
 
