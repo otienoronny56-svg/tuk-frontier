@@ -6,7 +6,6 @@ import Schedule from './pages/Public/Schedule';
 import Blog from './pages/Public/Blog';
 import BlogPostDetail from './pages/Public/BlogPostDetail';
 import Guide from './pages/Public/Guide';
-import People from './pages/Public/People';
 import SponsorUs from './pages/Public/SponsorUs';
 import Contact from './pages/Public/Contact';
 import Login from './pages/Auth/Login';
@@ -49,7 +48,6 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPostDetail />} />
             <Route path="/guide" element={<Guide />} />
-            <Route path="/people" element={<People />} />
             <Route path="/sponsor" element={<SponsorUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />

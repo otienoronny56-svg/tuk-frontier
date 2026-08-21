@@ -84,7 +84,7 @@ export default function Footer() {
                 <Link to="/sponsor" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Sponsor Us</Link>
               </li>
               <li>
-                <Link to="/people" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Mentors & Judges</Link>
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>Contact Us</Link>
               </li>
             </ul>
           </div>

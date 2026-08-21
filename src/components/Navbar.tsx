@@ -60,7 +60,6 @@ export default function Navbar() {
     { name: 'Tracks', path: '/tracks' },
     { name: 'Schedule', path: '/schedule' },
     { name: 'Guide', path: '/guide' },
-    { name: 'People', path: '/people' },
     { name: 'Blog', path: '/blog' },
     { name: 'Sponsors', path: '/sponsor' },
     { name: 'Contact', path: '/contact' },

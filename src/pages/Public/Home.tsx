@@ -618,7 +618,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Card 3: Mentors & Committees */}
+            {/* Card 3: Mentorship & Guidance */}
             <motion.div 
               className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-purple-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(168,85,247,0.3)] relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
@@ -633,15 +633,15 @@ export default function Home() {
                   <Zap size={28} strokeWidth={2.5} />
                 </div>
                 <span className="text-[11px] font-bold text-purple-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Leadership & Experts
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Technical Guidance
                 </span>
-                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-purple-400 transition-colors">Mentors & Committees</h3>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-purple-400 transition-colors">Mentorship & Support</h3>
                 <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
-                  1-on-1 guidance from 40+ CTOs and software engineers alongside the 9 student-led organizing committees behind the summit.
+                  Direct technical clinics, pitch preparation, and 1-on-1 guidance from top engineering leaders and faculty mentors.
                 </p>
               </div>
-              <Link to="/people" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-purple-400 hover:text-purple-300 transition-colors mt-auto w-fit group/link">
-                Meet Mentors & Leaders 
+              <Link to="/guide" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-purple-400 hover:text-purple-300 transition-colors mt-auto w-fit group/link">
+                View Mentorship Guide 
                 <span className="bg-purple-500/10 p-1.5 rounded-full group-hover/link:bg-purple-500/20 transition-colors group-hover/link:translate-x-1">
                   <ArrowRight size={14} />
                 </span>
