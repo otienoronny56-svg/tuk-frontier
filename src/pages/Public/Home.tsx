@@ -78,7 +78,6 @@ export default function Home() {
         justifyContent: 'center',
         overflow: 'hidden',
         background: 'linear-gradient(135deg, #020617 0%, #0a0f1e 30%, #030712 60%, #0c0a1a 100%)',
-        marginTop: 'calc(var(--navbar-height, 64px))',
         paddingTop: '2rem',
         paddingBottom: '4rem',
       }}>
