@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield, MapPin, Calendar, Users, Sparkles, Award } from 'lucide-react';
+import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield, MapPin, Calendar } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
@@ -74,168 +74,132 @@ export default function Home() {
         {/* Glowing orb in center behind text for premium feel */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-tuk-navy/10 rounded-full blur-[100px] z-0 pointer-events-none"></div>
         
-        <div className="container relative z-10 h-full mx-auto flex flex-col md:flex-row items-center md:justify-between gap-8 md:gap-12 py-8 px-4 md:py-0">
+        <div className="container relative z-10 h-full mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-10 lg:gap-14 py-8 px-4 md:py-4">
           {/* Left Content Column */}
           <motion.div
-            className="flex-1 flex flex-col items-start w-full md:max-w-[55%]"
+            className="flex-1 flex flex-col items-start w-full lg:max-w-[55%]"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full border border-tuk-navy/20 bg-background/50 backdrop-blur-md text-tuk-navy font-semibold mb-3 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.08em] sm:tracking-[0.15em] shadow-sm max-w-full text-left" style={{ wordBreak: 'break-word' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-tuk-navy/20 bg-background/50 backdrop-blur-md text-tuk-navy font-semibold mb-4 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.08em] sm:tracking-[0.15em] shadow-sm max-w-full text-left" style={{ wordBreak: 'break-word' }}>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Jointly Convened by FEBE Faculty Rep Office • KUZA–TUK • ASA–TUK
             </div>
 
-            <h1 className="font-extrabold mb-6 leading-[1.1] tracking-tight text-left" style={{ fontSize: 'clamp(2.2rem, 7vw, 5rem)', color: 'var(--foreground)', wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
+            <h1 className="font-extrabold mb-6 leading-[1.1] tracking-tight text-left" style={{ fontSize: 'clamp(2.4rem, 7vw, 5rem)', color: 'var(--foreground)', wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
               TUK <span style={{ color: '#4ade80' }}>Frontier.</span><br />
-              <span style={{ color: 'var(--foreground)', opacity: 0.8, fontSize: 'clamp(1.3rem,4.5vw,3.5rem)' }}>Innovation at the Frontier.</span>
+              <span style={{ color: 'var(--foreground)', opacity: 0.85, fontSize: 'clamp(1.35rem,4.5vw,3.5rem)' }}>Innovation at the Frontier.</span>
             </h1>
 
-            <p className="text-base md:text-xl mb-10 font-medium max-w-xl leading-relaxed text-left" style={{ color: 'var(--muted-foreground)' }}>
+            <p className="text-base md:text-xl mb-8 font-medium max-w-xl leading-relaxed text-left" style={{ color: 'var(--muted-foreground)' }}>
               Kenya's premier 72-hour student engineering & technology innovation summit. Transforming student talent into market-ready solutions, startups, and employment-ready graduates.
             </p>
 
-            <div className="flex flex-row w-full justify-start gap-3 sm:gap-4 mb-4">
-              <Link to="/register" className="btn inline-flex items-center justify-center transition-all hover:-translate-y-1 hover:shadow-lg duration-300 text-sm sm:text-base px-4 py-3 sm:px-6 sm:py-3" style={{ backgroundColor: 'var(--tuk-gold)', color: '#000', borderRadius: 'var(--radius-xl)', fontWeight: 700, flex: '1 1 auto', maxWidth: '180px' }}>
-                Register <ArrowRight size={16} className="ml-1 sm:ml-2" />
+            <div className="flex flex-row w-full justify-start gap-3 sm:gap-4 mb-8">
+              <Link to="/register" className="btn inline-flex items-center justify-center transition-all hover:-translate-y-1 hover:shadow-lg duration-300 text-sm sm:text-base px-6 py-3.5" style={{ backgroundColor: 'var(--tuk-gold)', color: '#000', borderRadius: 'var(--radius-xl)', fontWeight: 700, flex: '0 1 auto', minWidth: '150px' }}>
+                Register <ArrowRight size={16} className="ml-2" />
               </Link>
-              <Link to="/sponsor" className="btn btn-outline inline-flex items-center justify-center backdrop-blur-sm transition-all hover:-translate-y-1 duration-300 text-sm sm:text-base px-4 py-3 sm:px-6 sm:py-3" style={{ borderRadius: 'var(--radius-xl)', color: 'var(--foreground)', flex: '1 1 auto', maxWidth: '180px' }}>
+              <Link to="/sponsor" className="btn btn-outline inline-flex items-center justify-center backdrop-blur-sm transition-all hover:-translate-y-1 duration-300 text-sm sm:text-base px-6 py-3.5" style={{ borderRadius: 'var(--radius-xl)', color: 'var(--foreground)', flex: '0 1 auto', minWidth: '140px' }}>
                 Sponsor Us
               </Link>
             </div>
+
+            {/* Quick Hero Feature Badges */}
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold" style={{ color: 'var(--muted-foreground)' }}>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
+                <Calendar size={14} className="text-amber-500" /> Oct 2–4, 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
+                <MapPin size={14} className="text-emerald-500" /> TUK Main Campus
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
+                <Clock size={14} className="text-blue-500" /> 72H Sprint
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
+                <Trophy size={14} className="text-purple-500" /> Awards & Incubation
+              </span>
+            </div>
           </motion.div>
 
-          {/* Right Interactive Code Terminal Column */}
-          {/* Right Column: Summit Showcase & Countdown */}
+          {/* Right Open Countdown Showcase */}
           <motion.div
-            className="relative flex flex-col items-center justify-center gap-6 w-full mt-8 md:mt-0 md:max-w-[44%]"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="flex-1 w-full lg:max-w-[42%] flex flex-col items-center justify-center gap-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Countdown Timer */}
-            <div
-              className="w-full flex items-center justify-around py-3 px-4 rounded-2xl"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid var(--glass-border)',
-                backdropFilter: 'blur(12px)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
-              }}
-            >
+            {/* Live Status Header Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full" style={{ background: 'rgba(74, 222, 128, 0.1)', border: '1px solid rgba(74, 222, 128, 0.3)' }}>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-500">Countdown to Hackathon</span>
+            </div>
+
+            {/* Countdown Display: 4 Open Glass Cards */}
+            <div className="grid grid-cols-4 gap-2.5 sm:gap-4 w-full">
               {[
-                { label: 'Days', value: timeLeft.days },
-                { label: 'Hours', value: timeLeft.hours },
-                { label: 'Minutes', value: timeLeft.minutes },
-                { label: 'Seconds', value: timeLeft.seconds }
+                { label: 'Days', value: timeLeft.days, color: 'var(--tuk-gold)' },
+                { label: 'Hours', value: timeLeft.hours, color: '#60a5fa' },
+                { label: 'Minutes', value: timeLeft.minutes, color: '#34d399' },
+                { label: 'Seconds', value: timeLeft.seconds, color: '#c084fc' }
               ].map((unit, i) => (
-                <div key={i} className="flex flex-col items-center justify-center min-w-[50px]">
-                  <div className="text-2xl sm:text-3xl font-black leading-none mb-1 tabular-nums" style={{ color: 'var(--foreground)' }}>
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -3 }}
+                  className="flex flex-col items-center justify-center py-4 px-2 sm:py-5 sm:px-3 rounded-2xl text-center"
+                  style={{
+                    background: 'var(--glass-bg)',
+                    border: '1px solid var(--glass-border)',
+                    backdropFilter: 'blur(12px)',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)'
+                  }}
+                >
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-1.5 tabular-nums" style={{ color: 'var(--foreground)' }}>
                     {String(unit.value).padStart(2, '0')}
                   </div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.12em] font-semibold" style={{ color: 'var(--muted-foreground)' }}>
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.15em] font-bold" style={{ color: 'var(--muted-foreground)' }}>
                     {unit.label}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            {/* Summit Overview Showcase Card */}
-            <div
-              className="w-full rounded-[1.75rem] p-6 relative overflow-hidden flex flex-col gap-4 text-left"
-              style={{
-                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                backdropFilter: 'blur(16px)',
-                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 222, 128, 0.06)'
-              }}
-            >
-              {/* Background ambient glows */}
-              <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '150px', height: '150px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', bottom: '-40px', left: '-40px', width: '150px', height: '150px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251, 191, 36, 0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
-
-              {/* Status Header */}
-              <div className="flex items-center justify-between gap-2 pb-3" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            {/* Floating Challenge Tracks Preview Chips */}
+            <div className="w-full flex flex-col gap-3 pt-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: 'var(--muted-foreground)' }}>
+                6 Specialized Innovation Tracks
+              </div>
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  'Geospatial & EO',
+                  'AI & Data Science',
+                  'Smart Infrastructure',
+                  'Climate Tech',
+                  'Health Tech',
+                  'Fintech & Inclusion'
+                ].map((track, i) => (
+                  <span
+                    key={i}
+                    className="text-xs font-medium px-3 py-1.5 rounded-xl transition-transform hover:scale-105"
+                    style={{
+                      background: 'var(--muted)',
+                      border: '1px solid var(--glass-border)',
+                      color: 'var(--foreground)'
+                    }}
+                  >
+                    {track}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Applications Open</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                  <Calendar size={13} className="text-amber-400" />
-                  <span>Oct 2–4, 2026</span>
-                </div>
+                ))}
               </div>
+            </div>
 
-              {/* Summit Highlights Info Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-                    <MapPin size={16} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Venue</div>
-                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>TUK Main Campus</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
-                    <Users size={16} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Cohort</div>
-                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>500+ Builders</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
-                    <Sparkles size={16} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Format</div>
-                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>72H In-Person</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 shrink-0">
-                    <Award size={16} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Prizes & Perks</div>
-                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>Grants & Incubation</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Focus Tracks Preview */}
-              <div className="flex flex-col gap-1.5 pt-1">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Innovation Tracks</div>
-                <div className="flex flex-wrap gap-1.5">
-                  {['AI & Data Science', 'Geospatial & EO', 'Smart Infrastructure', 'Fintech', 'Climate Tech', 'Health Tech'].map((track, i) => (
-                    <span
-                      key={i}
-                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/5 text-slate-300 border border-white/5"
-                    >
-                      {track}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom Quick Badge */}
-              <div className="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] text-muted-foreground">
-                <span className="flex items-center gap-1 font-medium text-emerald-400">
-                  <CheckCircleIcon size={13} /> Free Registration & Swag
-                </span>
-                <Link to="/guide" className="font-semibold text-amber-400 hover:text-amber-300 transition-colors">
-                  Summit Guide →
-                </Link>
-              </div>
+            {/* Bottom perks note */}
+            <div className="flex items-center justify-center gap-2 text-xs font-semibold" style={{ color: 'var(--muted-foreground)' }}>
+              <CheckCircleIcon size={14} className="text-emerald-500" />
+              <span>Free Registration • Meals & Hackathon Swag Provided</span>
             </div>
           </motion.div>
         </div>
