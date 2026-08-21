@@ -336,72 +336,160 @@ export default function Home() {
         </section>
       )}
 
-      {/* 3. The Experience Section */}
-      <section className="pt-24 pb-16 relative overflow-hidden">
-        {/* Vivid ambient glows */}
-        <div style={{ position: 'absolute', top: '-80px', left: '10%', width: '420px', height: '420px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(234,179,8,0.12) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', bottom: '-60px', right: '8%', width: '360px', height: '360px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(167,139,250,0.1) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+      {/* 3. The Experience Section — Premium Split Layout */}
+      <section style={{
+        position: 'relative',
+        overflow: 'hidden',
+        background: 'linear-gradient(180deg, #020617 0%, #050c1a 100%)',
+        padding: '7rem 0',
+      }}>
+        {/* Ambient glows */}
+        <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '5%', right: '-5%', width: '450px', height: '450px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
-        <div className="container relative z-10">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto w-full">
+        <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}
+            className="flex-col-mobile"
+          >
+            {/* Left: Bold Headline */}
             <motion.div
-              className="w-full flex flex-col items-center justify-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.8 }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                More than a hackathon.<br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-tuk-gold to-yellow-300">It's a launchpad.</span>
-              </h2>
-
-              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
-                TUK Frontier isn't just about writing code for 48 hours. It's about meeting your future co-founder, landing a job at a top tech firm, and turning a crazy weekend idea into a <span className="font-semibold" style={{ color: 'var(--tuk-gold)' }}>fully-fledged startup</span>.
-              </p>
-
-              {/* Feature Pills — vibrant, colored */}
-              <div className="flex flex-row flex-wrap justify-center gap-4 sm:gap-5 mb-12 w-full">
-                {[
-                  { icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, label: 'Elite Mentorship', color: '#60a5fa', glow: 'rgba(96,165,250,0.18)', border: 'rgba(96,165,250,0.35)' },
-                  { icon: <Cpu size={18} />, label: 'Enterprise Hardware', color: '#4ade80', glow: 'rgba(74,222,128,0.15)', border: 'rgba(74,222,128,0.35)' },
-                  { icon: <Rocket size={18} />, label: 'Incubator Pipeline', color: '#c084fc', glow: 'rgba(192,132,252,0.15)', border: 'rgba(192,132,252,0.35)' },
-                ].map((pill, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    style={{
-                      display: 'flex', alignItems: 'center', gap: '0.625rem',
-                      padding: '0.6rem 1.4rem', borderRadius: '999px',
-                      background: `var(--glass-bg)`,
-                      border: `1px solid ${pill.border}`,
-                      boxShadow: `0 0 20px ${pill.glow}, inset 0 1px 0 rgba(255,255,255,0.07)`,
-                      backdropFilter: 'blur(10px)',
-                      color: pill.color,
-                      fontWeight: 700,
-                      fontSize: '0.9rem',
-                      cursor: 'default',
-                      transition: 'transform 0.2s',
-                    }}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                  >
-                    <span style={{ color: pill.color }}>{pill.icon}</span>
-                    <span style={{ color: 'var(--foreground)', fontWeight: 600 }}>{pill.label}</span>
-                  </motion.div>
-                ))}
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1rem', borderRadius: '999px', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.25)', width: 'fit-content' }}>
+                <Rocket size={14} color="#fbbf24" />
+                <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#fbbf24' }}>Beyond the Hackathon</span>
               </div>
 
-              <Link to="/about" className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl p-4 px-8 font-bold text-black bg-tuk-gold hover:bg-yellow-400 transition-all shadow-[0_0_40px_-10px_rgba(234,179,8,0.5)] hover:shadow-[0_0_60px_-15px_rgba(234,179,8,0.7)] hover:-translate-y-1">
-                <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
-                <span className="relative flex items-center gap-2">Discover the Experience <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></span>
-              </Link>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                fontWeight: 900,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: '#ffffff',
+                margin: 0,
+              }}>
+                More than<br />a hackathon.<br />
+                <span style={{
+                  background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fcd34d 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>It's a launchpad.</span>
+              </h2>
+
+              <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, margin: 0, maxWidth: '480px' }}>
+                TUK Frontier isn't just about writing code. It's about meeting your future co-founder, landing a job at a top tech firm, and turning a weekend idea into a{' '}
+                <span style={{ color: '#fbbf24', fontWeight: 600 }}>fully-fledged startup</span>.
+              </p>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <Link to="/about" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                  padding: '0.8rem 1.75rem', borderRadius: '999px',
+                  background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                  color: '#000', fontWeight: 800, fontSize: '0.9rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 0 30px rgba(251,191,36,0.3)',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(251,191,36,0.5)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(251,191,36,0.3)'; }}
+                >
+                  Discover the Experience <ArrowRight size={15} />
+                </Link>
+                <Link to="/register" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                  padding: '0.8rem 1.75rem', borderRadius: '999px',
+                  background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)',
+                  color: 'rgba(255,255,255,0.8)', fontWeight: 600, fontSize: '0.9rem',
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.12)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; }}
+                >
+                  Register Free
+                </Link>
+              </div>
             </motion.div>
+
+            {/* Right: 3 Glowing Feature Cards */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {[
+                {
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+                  title: 'Elite Mentorship',
+                  desc: 'Direct 1-on-1 sessions with CTOs, engineers, and startup founders from Kenya\'s top tech companies.',
+                  color: '#60a5fa',
+                  glow: 'rgba(96,165,250,0.15)',
+                },
+                {
+                  icon: <Cpu size={22} />,
+                  title: 'Enterprise Hardware',
+                  desc: 'Access to cutting-edge IoT kits, cloud credits, developer tools, and lab equipment during the sprint.',
+                  color: '#4ade80',
+                  glow: 'rgba(74,222,128,0.15)',
+                },
+                {
+                  icon: <Rocket size={22} />,
+                  title: 'Incubator Pipeline',
+                  desc: 'Top teams earn a direct pathway to startup incubation, acceleration funding, and investor introductions.',
+                  color: '#c084fc',
+                  glow: 'rgba(192,132,252,0.15)',
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.6, delay: i * 0.12 }}
+                  whileHover={{ x: 6 }}
+                  style={{
+                    display: 'flex', alignItems: 'flex-start', gap: '1.25rem',
+                    padding: '1.5rem 1.75rem',
+                    borderRadius: '1.25rem',
+                    background: `linear-gradient(135deg, ${card.glow} 0%, rgba(255,255,255,0.02) 100%)`,
+                    border: `1px solid ${card.color}25`,
+                    backdropFilter: 'blur(16px)',
+                    boxShadow: `0 0 40px ${card.glow}, inset 0 1px 0 rgba(255,255,255,0.06)`,
+                    cursor: 'default',
+                    transition: 'box-shadow 0.3s',
+                  }}
+                  onMouseEnter={(e: any) => { e.currentTarget.style.boxShadow = `0 0 60px ${card.glow}, inset 0 1px 0 rgba(255,255,255,0.08)`; }}
+                  onMouseLeave={(e: any) => { e.currentTarget.style.boxShadow = `0 0 40px ${card.glow}, inset 0 1px 0 rgba(255,255,255,0.06)`; }}
+                >
+                  <div style={{
+                    width: '48px', height: '48px', borderRadius: '0.875rem', flexShrink: 0,
+                    background: `${card.color}15`, border: `1px solid ${card.color}30`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: card.color,
+                  }}>
+                    {card.icon}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: '0.4rem' }}>{card.title}</div>
+                    <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{card.desc}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* Inline responsive style */}
+        <style>{`
+          @media (max-width: 768px) {
+            .flex-col-mobile { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          }
+        `}</style>
       </section>
+
+
 
 
       {/* 4. Upgraded Feature Grid */}
