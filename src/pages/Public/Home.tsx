@@ -10,8 +10,6 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [sponsors, setSponsors] = useState<any[]>([]);
   const [tracks, setTracks] = useState<any[]>([]);
-  const [timeline, setTimeline] = useState<any[]>([]);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,35 +18,6 @@ export default function Home() {
       
       const { data: tracksData } = await supabase.from('tuk_hackathon_tracks').select('*').order('created_at', { ascending: false });
       if (tracksData) setTracks(tracksData);
-
-      const { data: scheduleData } = await supabase.from('tuk_hackathon_content').select('*').eq('key', 'schedule').single();
-      if (scheduleData && scheduleData.value && scheduleData.value.length > 0) {
-        const flatEvents: any[] = [];
-        scheduleData.value.forEach((day: any) => {
-          day.events?.forEach((event: any) => {
-            flatEvents.push({
-              time: `${day.date} • ${event.time}`,
-              title: event.title,
-              desc: event.location ? `Location: ${event.location}` : '',
-              icon: event.title.toLowerCase().includes('code') || event.title.toLowerCase().includes('hack') ? 'code' :
-                    event.title.toLowerCase().includes('pizza') || event.title.toLowerCase().includes('food') || event.title.toLowerCase().includes('lunch') || event.title.toLowerCase().includes('breakfast') || event.title.toLowerCase().includes('dinner') ? 'zap' :
-                    event.title.toLowerCase().includes('win') || event.title.toLowerCase().includes('closing') || event.title.toLowerCase().includes('award') ? 'trophy' :
-                    event.title.toLowerCase().includes('submit') || event.title.toLowerCase().includes('deadline') ? 'check' :
-                    'rocket'
-            });
-          });
-        });
-        setTimeline(flatEvents);
-      } else {
-        setTimeline([
-          { time: 'Friday, Oct 2, 2026 • 08:30 AM', title: 'Opening Ceremony & Keynotes', desc: 'Welcome remarks from FEBE Faculty Reps, KUZA–TUK, and ASA–TUK. Keynote speeches from tech and industry leaders.', icon: 'rocket' },
-          { time: 'Friday, Oct 2, 2026 • 11:30 AM', title: 'Challenge Reveal & Hackathon Begins', desc: 'Track challenges unveiled. The 72-hour hackathon clock begins. Mentor channels and cloud resources open.', icon: 'code' },
-          { time: 'Saturday, Oct 3, 2026 • 09:00 AM', title: 'Progress Pitches & Technical Clinics', desc: 'Mid-hackathon progress check-ins with mentors. Specialized clinics in GIS, AI, BIM, and hardware prototyping.', icon: 'zap' },
-          { time: 'Saturday, Oct 3, 2026 • 04:00 PM', title: 'Pitch Deck & Prototype Clinics', desc: 'Refine solution architecture, user interface, and pitch decks with startup founders and technical leads.', icon: 'trophy' },
-          { time: 'Sunday, Oct 4, 2026 • 12:00 PM', title: 'Final Project Submission Deadline', desc: 'Submit code repositories, pitch decks, and demo videos for judge evaluation.', icon: 'check' },
-          { time: 'Sunday, Oct 4, 2026 • 01:30 PM', title: 'Demo Day & Awards Ceremony', desc: 'Finalist pitches live on stage, project demonstrations, followed by grand awards ceremony!', icon: 'rocket' }
-        ]);
-      }
     };
     fetchData();
 
@@ -564,88 +533,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5.2. Interactive Timeline Journey */}
-      <section className="pt-12 pb-16 bg-tuk-navy-light/10 border-t border-glass-border relative overflow-hidden">
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-tuk-navy/10 rounded-full blur-[90px] z-0 pointer-events-none"></div>
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Event <span className="text-gradient">Timeline</span></h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Track the 72-hour journey from idea to post-event incubation.</p>
-          </div>
-
-          {/* Group events by day — always side by side on wide screens */}
-          {(() => {
-            const groups: Record<string, any[]> = {};
-            const groupOrder: string[] = [];
-            timeline.forEach(step => {
-              const dayKey = step.time.split('•')[0].trim();
-              if (!groups[dayKey]) { groups[dayKey] = []; groupOrder.push(dayKey); }
-              groups[dayKey].push(step);
-            });
-            const days = groupOrder.map(k => ({ label: k, events: groups[k] }));
-            const colors = ['#4ade80', '#a78bfa', '#f59e0b', '#f87171'];
-
-            return (
-              <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: days.length > 2 ? 'repeat(auto-fit, minmax(320px, 1fr))' : `repeat(${Math.max(1, days.length)}, 1fr)`, gap: '2rem', alignItems: 'start' }}>
-                {days.map((day, dayIdx) => {
-                  const color = colors[dayIdx % colors.length];
-                  return (
-                    <div key={dayIdx} style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                      {/* Day header with date */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                        <div style={{ height: '2px', flex: 1, background: `linear-gradient(to right, ${color}, transparent)` }} />
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1.25rem', borderRadius: '999px', border: `1px solid ${color}55`, background: `${color}15`, fontSize: '0.825rem', fontWeight: 700, color, whiteSpace: 'nowrap' }}>
-                          <Calendar size={14} />
-                          {day.label}
-                        </span>
-                        <div style={{ height: '2px', flex: 1, background: `linear-gradient(to left, ${color}, transparent)` }} />
-                      </div>
-
-                      {/* Events list */}
-                      <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        {/* Vertical line */}
-                        <div style={{ position: 'absolute', left: '15px', top: '8px', bottom: '8px', width: '2px', background: `linear-gradient(to bottom, ${color}, transparent)`, opacity: 0.3 }} />
-
-                        {day.events.map((step, idx) => (
-                          <motion.div
-                            key={idx}
-                            style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', position: 'relative', paddingLeft: '3rem' }}
-                            initial={{ opacity: 0, x: dayIdx % 2 === 0 ? -24 : 24 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: '-60px' }}
-                            transition={{ duration: 0.45, delay: idx * 0.07 }}
-                          >
-                            {/* Icon dot */}
-                            <div style={{ position: 'absolute', left: 0, top: '0.875rem', width: '32px', height: '32px', borderRadius: '50%', background: 'var(--muted)', border: `2px solid ${color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color, zIndex: 10, boxShadow: `0 0 14px ${color}44` }}>
-                              {step.icon === 'code' && <Code size={14} />}
-                              {step.icon === 'zap' && <Zap size={14} />}
-                              {step.icon === 'trophy' && <Trophy size={14} />}
-                              {step.icon === 'check' && <CheckCircleIcon size={14} />}
-                              {step.icon === 'rocket' && <Rocket size={14} />}
-                            </div>
-
-                            <div style={{ padding: '1rem 1.25rem', borderRadius: '1rem', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', width: '100%', transition: 'all 0.2s', cursor: 'default', backdropFilter: 'blur(8px)' }}
-                              onMouseEnter={e => (e.currentTarget.style.borderColor = color + '55')}
-                              onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--glass-border)')}
-                            >
-                              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 700, color, marginBottom: '0.35rem', background: `${color}12`, padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
-                                <Clock size={12} />
-                                {step.time.split('•')[1]?.trim() || step.time}
-                              </div>
-                              <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--foreground)', margin: '0.25rem 0 0.35rem 0' }}>{step.title}</h4>
-                              {step.desc && <p style={{ fontSize: '0.85rem', color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.5 }}>{step.desc}</p>}
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })()}
-        </div>
-      </section>
 
       {/* 5.3. Summit Exploration Pillars Grid */}
       <section className="py-24 border-y border-glass-border relative overflow-hidden bg-slate-950">
