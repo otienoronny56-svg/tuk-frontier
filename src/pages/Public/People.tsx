@@ -273,35 +273,6 @@ export default function People() {
         </div>
       )}
 
-      {/* Organizing Committee Structure */}
-      <section className="mb-24 mt-16 p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800">
-        <h2 className="text-3xl font-bold text-center mb-4">Organizing Committee Structure</h2>
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10 text-sm">
-          TUK Frontier Hackathon is operated through 9 dedicated student-led and faculty-guided committees uniting FEBE Office of Faculty Rep, KUZA–TUK, and ASA–TUK.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { title: 'Strategic Steering', role: 'Overall vision, budget oversight, partnerships & institutional representation across all conveners.' },
-            { title: 'Technical Committee', role: 'Challenge track design, judging rubrics, API/dataset integrations, and platform management.' },
-            { title: 'Bootcamp & Training', role: 'Curriculum design across 5 technical tracks, trainer recruitment, and workshop delivery.' },
-            { title: 'Mentorship Committee', role: 'Recruiting 40–60 mentors, team-mentor matching, session scheduling, and quality assurance.' },
-            { title: 'Events & Logistics', role: 'Venue management, catering, AV infrastructure, participant registration, and transport.' },
-            { title: 'Partnerships & Sponsorship', role: 'Corporate outreach, sponsor tier management, MOU drafting, and partner deliverables.' },
-            { title: 'Marketing & Comms', role: 'Brand identity, social media campaigns, press relations, photography, and live streaming.' },
-            { title: 'Research & Innovation', role: 'Curating the Research Showcase, publishing impact white papers, and M&E reporting.' },
-            { title: 'Career Fair Committee', role: 'Employer booth management, CV drop coordination, recruitment databases, and internship offers.' }
-          ].map((comm, i) => (
-            <div key={i} className="p-5 rounded-xl bg-slate-950/60 border border-slate-800/80 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-bold text-tuk-gold uppercase tracking-wider">Committee {i + 1}</span>
-                <h4 className="text-base font-bold mt-1 mb-2 text-slate-200">{comm.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">{comm.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Want to Mentor CTA */}
       <motion.div

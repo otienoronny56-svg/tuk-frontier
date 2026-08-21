@@ -223,9 +223,9 @@ export default function SponsorUs() {
             <Mail color="var(--tuk-gold)" />
             <span>sponsor@tukfrontier.com</span>
           </div>
-          <a href="tel:+254791021846" className="flex items-center gap-3 hover:text-tuk-gold transition-colors" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="tel:+254794107254" className="flex items-center gap-3 hover:text-tuk-gold transition-colors" style={{ textDecoration: 'none', color: 'inherit' }}>
             <Phone color="var(--tuk-gold)" />
-            <span>+254 791 021 846</span>
+            <span>+254 794 107 254</span>
           </a>
           <div className="flex items-center gap-3">
             <Building color="var(--tuk-gold)" />

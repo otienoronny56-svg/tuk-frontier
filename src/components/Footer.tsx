@@ -43,7 +43,7 @@ export default function Footer() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
-              <a href="https://wa.me/254791021846" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-emerald-500 hover:text-emerald-400" style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(37,211,102,0.1)', transition: 'all 0.2s' }}>
+              <a href="https://wa.me/254794107254" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-emerald-500 hover:text-emerald-400" style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(37,211,102,0.1)', transition: 'all 0.2s' }}>
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.62.962 3.21 1.454 4.816 1.458 5.505 0 9.987-4.482 9.991-9.989.002-2.668-1.033-5.176-2.914-7.058C16.66 1.684 14.156.651 11.49.651c-5.513 0-10.002 4.49-10.006 10.001 0 1.78.463 3.518 1.34 5.032l-.993 3.626 3.722-.977c1.5.882 3.013 1.332 4.512 1.332zM16.58 13.91c-.244-.122-1.442-.712-1.666-.793-.223-.08-.387-.123-.55.122-.162.245-.63.794-.772.956-.143.163-.285.184-.529.062-.244-.122-.929-.342-1.77-1.092-.653-.583-1.094-1.303-1.222-1.527-.128-.224-.014-.345.109-.467.11-.11.244-.285.366-.427.122-.143.163-.238.245-.407.08-.169.04-.319-.02-.441-.061-.122-.55-1.324-.753-1.813-.198-.479-.4-.414-.549-.422-.143-.007-.306-.007-.468-.007-.163 0-.427.061-.65.306-.224.244-.855.835-.855 2.036 0 1.202.875 2.362.997 2.525.122.163 1.722 2.629 4.17 3.687.583.25 1.037.4 1.393.513.585.186 1.117.159 1.538.096.47-.07 1.442-.589 1.646-1.159.203-.57.203-1.059.142-1.16-.06-.101-.223-.162-.468-.284z"/>
                 </svg>
@@ -99,7 +99,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-tuk-gold" style={{ flexShrink: 0 }} />
-                <a href="tel:+254791021846" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>+254 791 021 846</a>
+                <a href="tel:+254794107254" className="text-muted-foreground hover:text-foreground text-sm" style={{ textDecoration: 'none', transition: 'color 0.2s' }}>+254 794 107 254</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-tuk-gold" style={{ flexShrink: 0 }} />

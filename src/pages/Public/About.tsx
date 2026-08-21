@@ -47,27 +47,27 @@ export default function About() {
       </motion.div>
 
       {/* Rationale & Why Frontier */}
-      <section className="mb-20 grid md:grid-cols-2 gap-8 items-center">
-        <div className="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Background & Rationale</span>
-          <h2 className="text-2xl font-bold mt-2 mb-4">Bridging University Theory & Industry Reality</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+      <section className="mb-20 grid md:grid-cols-2 gap-8 items-stretch">
+        <div className="p-8 rounded-[2rem] bg-slate-900/60 border border-slate-700/50 shadow-lg hover:border-slate-600 transition-colors flex flex-col">
+          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2 block">Background & Rationale</span>
+          <h2 className="text-3xl font-bold mb-4 leading-tight">Bridging University Theory & Industry Reality</h2>
+          <p className="text-base text-slate-300 leading-relaxed mb-4">
             Africa's median age of 19 gives it the largest youth demographic dividend in history, and Kenya — anchored by Nairobi's Silicon Savannah — has proven that homegrown innovation can compete globally. 
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-base text-slate-300 leading-relaxed mt-auto">
             Yet a persistent gap remains between academic theory and applied technology competencies. TUK Frontier Hackathon compresses semesters of learning into days of hands-on build experience across AI, GIS, IoT, BIM, and cloud computing.
           </p>
         </div>
 
-        <div className="p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800">
-          <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">The Vision</span>
-          <h2 className="text-2xl font-bold mt-2 mb-4">Why "Frontier"?</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+        <div className="p-8 rounded-[2rem] bg-slate-900/60 border border-slate-700/50 shadow-lg hover:border-slate-600 transition-colors flex flex-col">
+          <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2 block">The Vision</span>
+          <h2 className="text-3xl font-bold mb-4 leading-tight">Why "Frontier"?</h2>
+          <p className="text-base text-slate-300 leading-relaxed mb-6">
             A <em>frontier</em> is the threshold of possibility where the curious push beyond convention. We signal a deliberate ambition: for TUK students not merely to learn about emerging technologies, but to stand at their edge — building, experimenting, and solving real national challenges.
           </p>
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap gap-2.5 mt-auto pt-4 border-t border-slate-800">
             {['Artificial Intelligence', 'Geospatial Intelligence', 'Climate Technology', 'Smart Infrastructure', 'Space Tech'].map((tag, i) => (
-              <span key={i} className="text-xs px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium">{tag}</span>
+              <span key={i} className="text-[11px] px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold whitespace-nowrap tracking-wide">{tag}</span>
             ))}
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function About() {
           </div>
           <div className="p-6 rounded-2xl bg-slate-950/60 border border-blue-500/20 hover:border-blue-500/40 transition-colors text-center flex flex-col justify-center">
             <span className="text-3xl font-bold text-blue-400 mb-2">500+</span>
-            <span className="text-sm font-medium text-slate-300">Career Fair Attendees</span>
+            <span className="text-sm font-medium text-slate-300">Summit Participants</span>
           </div>
           <div className="p-6 rounded-2xl bg-slate-950/60 border border-blue-500/20 hover:border-blue-500/40 transition-colors text-center flex flex-col justify-center">
             <span className="text-3xl font-bold text-blue-400 mb-2">300+</span>

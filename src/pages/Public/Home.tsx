@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield } from 'lucide-react';
+import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield, MapPin, Calendar, Users, Sparkles, Award } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
@@ -11,41 +11,7 @@ export default function Home() {
   const [sponsors, setSponsors] = useState<any[]>([]);
   const [tracks, setTracks] = useState<any[]>([]);
   const [timeline, setTimeline] = useState<any[]>([]);
-  
-  const [terminalLines, setTerminalLines] = useState([
-    { text: '$ initialize_hackathon --year 2026', color: '#4ade80' },
-    { text: '[OK] Loading modules...', color: '#67e8f9' },
-    { text: '[OK] Connecting to global network...', color: '#67e8f9' },
-    { text: 'const mission = await buildFuture();', color: '#c084fc' },
-    { text: "if (mission.status === 'success') {", color: '#93c5fd' },
-    { text: '  console.log("Welcome to TUK Frontier!");', color: '#cbd5e1' },
-    { text: '}', color: '#93c5fd' }
-  ]);
 
-  useEffect(() => {
-    const hackerLines = [
-      { text: 'Unlocking Ksh 1,000,000 prize pool...', color: '#fef08a' },
-      { text: 'Loading caffeine modules... 99%', color: '#4ade80' },
-      { text: 'Syncing with top tech recruiters...', color: '#67e8f9' },
-      { text: 'Deploying next-gen AI models...', color: '#c084fc' },
-      { text: '[ALERT] Midnight pizza delivery inbound!', color: '#ef4444' },
-      { text: 'Optimizing pitch decks for investors...', color: '#cbd5e1' },
-      { text: 'Compiling winning code architecture...', color: '#bbf7d0' },
-      { text: 'Connecting to industry mentors...', color: '#93c5fd' },
-      { text: 'Resolving merge conflicts... [SUCCESS]', color: '#4ade80' },
-      { text: 'Booting up 72-hour grind mode...', color: '#fdba74' },
-      { text: 'Pushing final commit to production...', color: '#c084fc' }
-    ];
-
-    const interval = setInterval(() => {
-      const randomLine = hackerLines[Math.floor(Math.random() * hackerLines.length)];
-      setTerminalLines(prev => {
-        const newLines = [...prev, randomLine];
-        return newLines.length > 7 ? newLines.slice(newLines.length - 7) : newLines;
-      });
-    }, 1800);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,12 +41,12 @@ export default function Home() {
         setTimeline(flatEvents);
       } else {
         setTimeline([
-          { time: 'Day 1 (Friday) • 08:30 AM', title: 'Opening Ceremony & Keynotes', desc: 'Welcome remarks from FEBE Faculty Reps, KUZA–TUK, and ASA–TUK. Keynote speeches from tech and industry leaders.', icon: 'rocket' },
-          { time: 'Day 1 (Friday) • 11:30 AM', title: 'Challenge Reveal & Hackathon Begins', desc: 'Track challenges unveiled. The 72-hour hackathon clock begins. Mentor channels and cloud resources open.', icon: 'code' },
-          { time: 'Day 2 (Saturday) • 09:00 AM', title: 'Progress Pitches & Technical Clinics', desc: 'Mid-hackathon progress check-ins with mentors. Specialized clinics in GIS, AI, BIM, and hardware prototyping.', icon: 'zap' },
-          { time: 'Day 2 (Saturday) • 04:00 PM', title: 'Pitch Deck & Prototype Clinics', desc: 'Refine solution architecture, user interface, and pitch decks with startup founders and technical leads.', icon: 'trophy' },
-          { time: 'Day 3 (Sunday) • 12:00 PM', title: 'Final Project Submission Deadline', desc: 'Submit code repositories, pitch decks, and demo videos for judge evaluation.', icon: 'check' },
-          { time: 'Day 3 (Sunday) • 01:30 PM', title: 'Demo Day, Career Fair & Awards', desc: 'Finalist pitches live on stage, concurrent employer recruitment fair & research showcase, followed by awards ceremony!', icon: 'rocket' }
+          { time: 'Friday, Oct 2, 2026 • 08:30 AM', title: 'Opening Ceremony & Keynotes', desc: 'Welcome remarks from FEBE Faculty Reps, KUZA–TUK, and ASA–TUK. Keynote speeches from tech and industry leaders.', icon: 'rocket' },
+          { time: 'Friday, Oct 2, 2026 • 11:30 AM', title: 'Challenge Reveal & Hackathon Begins', desc: 'Track challenges unveiled. The 72-hour hackathon clock begins. Mentor channels and cloud resources open.', icon: 'code' },
+          { time: 'Saturday, Oct 3, 2026 • 09:00 AM', title: 'Progress Pitches & Technical Clinics', desc: 'Mid-hackathon progress check-ins with mentors. Specialized clinics in GIS, AI, BIM, and hardware prototyping.', icon: 'zap' },
+          { time: 'Saturday, Oct 3, 2026 • 04:00 PM', title: 'Pitch Deck & Prototype Clinics', desc: 'Refine solution architecture, user interface, and pitch decks with startup founders and technical leads.', icon: 'trophy' },
+          { time: 'Sunday, Oct 4, 2026 • 12:00 PM', title: 'Final Project Submission Deadline', desc: 'Submit code repositories, pitch decks, and demo videos for judge evaluation.', icon: 'check' },
+          { time: 'Sunday, Oct 4, 2026 • 01:30 PM', title: 'Demo Day & Awards Ceremony', desc: 'Finalist pitches live on stage, project demonstrations, followed by grand awards ceremony!', icon: 'rocket' }
         ]);
       }
     };
@@ -171,59 +137,135 @@ export default function Home() {
           </motion.div>
 
           {/* Right Interactive Code Terminal Column */}
+          {/* Right Column: Summit Showcase & Countdown */}
           <motion.div
-            className="hero-terminal relative flex flex-col items-center justify-center gap-8 w-full mt-8 md:mt-0 md:max-w-[40%] h-[400px] md:h-[500px]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            className="relative flex flex-col items-center justify-center gap-6 w-full mt-8 md:mt-0 md:max-w-[44%]"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Countdown Timer (Moved to Right Column) */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', width: '100%' }}>
+            {/* Countdown Timer */}
+            <div
+              className="w-full flex items-center justify-around py-3 px-4 rounded-2xl"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid var(--glass-border)',
+                backdropFilter: 'blur(12px)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+              }}
+            >
               {[
                 { label: 'Days', value: timeLeft.days },
                 { label: 'Hours', value: timeLeft.hours },
                 { label: 'Minutes', value: timeLeft.minutes },
                 { label: 'Seconds', value: timeLeft.seconds }
               ].map((unit, i) => (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '60px' }}>
-                  <div className="text-2xl sm:text-3xl font-black leading-none mb-1 tabular-nums" style={{ color: 'var(--foreground)' }}>{String(unit.value).padStart(2, '0')}</div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--muted-foreground)' }}>{unit.label}</div>
+                <div key={i} className="flex flex-col items-center justify-center min-w-[50px]">
+                  <div className="text-2xl sm:text-3xl font-black leading-none mb-1 tabular-nums" style={{ color: 'var(--foreground)' }}>
+                    {String(unit.value).padStart(2, '0')}
+                  </div>
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.12em] font-semibold" style={{ color: 'var(--muted-foreground)' }}>
+                    {unit.label}
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Animated Code Terminal Window */}
-            <div className="w-full max-w-lg rounded-xl shadow-2xl overflow-hidden z-10" style={{ backgroundColor: '#0f172a', border: '1px solid rgba(51,65,85,0.5)', filter: 'drop-shadow(0 25px 35px rgba(0,0,0,0.4))' }}>
-              {/* Terminal Header */}
-              <div className="px-4 py-3 flex items-center gap-2" style={{ backgroundColor: '#1e293b', borderBottom: '1px solid rgba(51,65,85,0.5)' }}>
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#ef4444' }}></div>
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#eab308' }}></div>
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#22c55e' }}></div>
-                <div className="ml-2 text-xs font-mono" style={{ color: '#94a3b8' }}>hacker@summit: ~</div>
+            {/* Summit Overview Showcase Card */}
+            <div
+              className="w-full rounded-[1.75rem] p-6 relative overflow-hidden flex flex-col gap-4 text-left"
+              style={{
+                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                backdropFilter: 'blur(16px)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 222, 128, 0.06)'
+              }}
+            >
+              {/* Background ambient glows */}
+              <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '150px', height: '150px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', bottom: '-40px', left: '-40px', width: '150px', height: '150px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251, 191, 36, 0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+              {/* Status Header */}
+              <div className="flex items-center justify-between gap-2 pb-3" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Applications Open</span>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
+                  <Calendar size={13} className="text-amber-400" />
+                  <span>Oct 2–4, 2026</span>
+                </div>
               </div>
-              {/* Terminal Body with typing animation */}
-              <div className="p-6 font-mono text-sm leading-relaxed flex flex-col justify-end" style={{ color: '#cbd5e1', height: '280px', overflow: 'hidden' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minHeight: '100%' }}>
-                  {terminalLines.map((line, index) => (
-                    <motion.div 
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }} 
-                      animate={{ opacity: 1, x: 0 }} 
-                      transition={{ duration: 0.3 }}
-                      className="mb-2 whitespace-pre" style={{ color: line.color }}
-                    >
-                      {line.text}
-                    </motion.div>
-                  ))}
+
+              {/* Summit Highlights Info Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                    <MapPin size={16} />
+                  </div>
                   <div>
-                    <motion.div 
-                      initial={{ opacity: 0 }} 
-                      animate={{ opacity: [0, 1, 0] }} 
-                      transition={{ repeat: Infinity, duration: 1 }}
-                      className="mt-1 w-2 h-4 inline-block" style={{ backgroundColor: '#94a3b8' }}
-                    ></motion.div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Venue</div>
+                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>TUK Main Campus</div>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Cohort</div>
+                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>500+ Builders</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
+                    <Sparkles size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Format</div>
+                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>72H In-Person</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 shrink-0">
+                    <Award size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Prizes & Perks</div>
+                    <div className="text-xs font-bold leading-snug" style={{ color: 'var(--foreground)' }}>Grants & Incubation</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Focus Tracks Preview */}
+              <div className="flex flex-col gap-1.5 pt-1">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Innovation Tracks</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {['AI & Data Science', 'Geospatial & EO', 'Smart Infrastructure', 'Fintech', 'Climate Tech', 'Health Tech'].map((track, i) => (
+                    <span
+                      key={i}
+                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white/5 text-slate-300 border border-white/5"
+                    >
+                      {track}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Quick Badge */}
+              <div className="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] text-muted-foreground">
+                <span className="flex items-center gap-1 font-medium text-emerald-400">
+                  <CheckCircleIcon size={13} /> Free Registration & Swag
+                </span>
+                <Link to="/guide" className="font-semibold text-amber-400 hover:text-amber-300 transition-colors">
+                  Summit Guide →
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -334,7 +376,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: <Target size={28} />, title: "Real-World Tracks", desc: "Solve actual industry problems presented by our sponsors.", accent: '#60a5fa', grad: 'linear-gradient(135deg, rgba(96,165,250,0.12) 0%, rgba(96,165,250,0.03) 100%)', border: 'rgba(96,165,250,0.25)' },
-              { icon: <Trophy size={28} />, title: "KSh 6.5M+ Prizes", desc: "Cash prizes, credits, and hardware.", accent: '#fbbf24', grad: 'linear-gradient(135deg, rgba(251,191,36,0.14) 0%, rgba(251,191,36,0.04) 100%)', border: 'rgba(251,191,36,0.3)' },
+              { icon: <Trophy size={28} />, title: "Prizes to be Won", desc: "Cash prizes, credits, and hardware.", accent: '#fbbf24', grad: 'linear-gradient(135deg, rgba(251,191,36,0.14) 0%, rgba(251,191,36,0.04) 100%)', border: 'rgba(251,191,36,0.3)' },
               { icon: <Clock size={28} />, title: "48 Hours", desc: "Non-stop building and mentoring.", accent: '#c084fc', grad: 'linear-gradient(135deg, rgba(192,132,252,0.12) 0%, rgba(192,132,252,0.03) 100%)', border: 'rgba(192,132,252,0.25)' },
               { icon: <Code size={28} />, title: "Workshops", desc: "Learn cutting-edge frameworks from the people who built them.", accent: '#34d399', grad: 'linear-gradient(135deg, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0.03) 100%)', border: 'rgba(52,211,153,0.25)' },
               { icon: <Globe size={28} />, title: "Networking", desc: "Rub shoulders with recruiters, founders, and fellow builders.", accent: '#818cf8', grad: 'linear-gradient(135deg, rgba(129,140,248,0.12) 0%, rgba(129,140,248,0.03) 100%)', border: 'rgba(129,140,248,0.25)' },
@@ -507,7 +549,7 @@ export default function Home() {
               <h3 className="text-5xl md:text-6xl font-black text-blue-400 tracking-tight">72h</h3>
               <div>
                 <p className="text-lg font-semibold text-slate-200">Multi-Day Summit</p>
-                <p className="text-sm text-slate-400 mt-2">Non-stop workspace, bootcamps, career fair & demo day.</p>
+                <p className="text-sm text-slate-400 mt-2">Non-stop workspace, bootcamps, mentorship & demo day.</p>
               </div>
             </div>
 
@@ -544,15 +586,16 @@ export default function Home() {
             const colors = ['#4ade80', '#a78bfa', '#f59e0b', '#f87171'];
 
             return (
-              <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: `repeat(${Math.min(days.length, 2)}, 1fr)`, gap: '2rem', alignItems: 'start' }}>
+              <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: days.length > 2 ? 'repeat(auto-fit, minmax(320px, 1fr))' : `repeat(${Math.max(1, days.length)}, 1fr)`, gap: '2rem', alignItems: 'start' }}>
                 {days.map((day, dayIdx) => {
                   const color = colors[dayIdx % colors.length];
                   return (
                     <div key={dayIdx} style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                      {/* Day header */}
+                      {/* Day header with date */}
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                         <div style={{ height: '2px', flex: 1, background: `linear-gradient(to right, ${color}, transparent)` }} />
-                        <span style={{ padding: '0.35rem 1.25rem', borderRadius: '999px', border: `1px solid ${color}55`, background: `${color}11`, fontSize: '0.8rem', fontWeight: 700, color, whiteSpace: 'nowrap' }}>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 1.25rem', borderRadius: '999px', border: `1px solid ${color}55`, background: `${color}15`, fontSize: '0.825rem', fontWeight: 700, color, whiteSpace: 'nowrap' }}>
+                          <Calendar size={14} />
                           {day.label}
                         </span>
                         <div style={{ height: '2px', flex: 1, background: `linear-gradient(to left, ${color}, transparent)` }} />
@@ -567,7 +610,7 @@ export default function Home() {
                           <motion.div
                             key={idx}
                             style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', position: 'relative', paddingLeft: '3rem' }}
-                            initial={{ opacity: 0, x: dayIdx === 0 ? -24 : 24 }}
+                            initial={{ opacity: 0, x: dayIdx % 2 === 0 ? -24 : 24 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: '-60px' }}
                             transition={{ duration: 0.45, delay: idx * 0.07 }}
@@ -585,10 +628,11 @@ export default function Home() {
                               onMouseEnter={e => (e.currentTarget.style.borderColor = color + '55')}
                               onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--glass-border)')}
                             >
-                              <div style={{ fontSize: '0.75rem', fontWeight: 700, color, marginBottom: '0.35rem' }}>
-                                {step.time.split('•')[1]?.trim()}
+                              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.75rem', fontWeight: 700, color, marginBottom: '0.35rem', background: `${color}12`, padding: '0.2rem 0.6rem', borderRadius: '6px' }}>
+                                <Clock size={12} />
+                                {step.time.split('•')[1]?.trim() || step.time}
                               </div>
-                              <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--foreground)', margin: '0 0 0.35rem 0' }}>{step.title}</h4>
+                              <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--foreground)', margin: '0.25rem 0 0.35rem 0' }}>{step.title}</h4>
                               {step.desc && <p style={{ fontSize: '0.85rem', color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.5 }}>{step.desc}</p>}
                             </div>
                           </motion.div>
@@ -717,7 +761,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Card 4: Career Fair & Incubation */}
+            {/* Card 4: Incubation & Acceleration */}
             <motion.div 
               className="p-8 rounded-[1.5rem] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 flex flex-col justify-between hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-500 group shadow-lg hover:shadow-[0_8px_32px_-12px_rgba(16,185,129,0.3)] relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
@@ -732,15 +776,15 @@ export default function Home() {
                   <Rocket size={28} strokeWidth={2.5} />
                 </div>
                 <span className="text-[11px] font-bold text-emerald-400/80 uppercase tracking-widest block mb-2 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Jobs & Acceleration
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Startup Launch & Support
                 </span>
-                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Career Fair & Incubation</h3>
+                <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Incubation & Acceleration</h3>
                 <p className="text-sm text-slate-400 leading-relaxed mb-6 font-medium">
-                  Direct CV dropboxes, on-site recruitment interviews, internship placements, and 6-month startup incubation for top teams.
+                  Structured 6-month post-hackathon incubation pathway, expert mentorship, seed acceleration, and startup launch support.
                 </p>
               </div>
               <Link to="/schedule" className="relative z-10 inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors mt-auto w-fit group/link">
-                Explore Placement & Incubation 
+                Explore Incubation 
                 <span className="bg-emerald-500/10 p-1.5 rounded-full group-hover/link:bg-emerald-500/20 transition-colors group-hover/link:translate-x-1">
                   <ArrowRight size={14} />
                 </span>

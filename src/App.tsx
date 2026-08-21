@@ -18,7 +18,7 @@ import Footer from './components/Footer';
 const WhatsAppButton = () => {
   return (
     <a 
-      href="https://wa.me/254791021846" 
+      href="https://wa.me/254794107254" 
       target="_blank" 
       rel="noopener noreferrer"
       className="whatsapp-float"
