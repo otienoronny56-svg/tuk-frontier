@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield, MapPin, Calendar } from 'lucide-react';
+import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
@@ -67,143 +67,254 @@ export default function Home() {
         }
       `}</style>
 
-      {/* 1. Modern Split-Layout Hero Section */}
-      <section className="relative w-full py-6 md:py-8 flex items-center overflow-hidden bg-background mt-16 lg:mt-20 border-b border-glass-border">
-        {/* Subtle Grid Background Overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-50 z-0 pointer-events-none"></div>
-        {/* Glowing orb in center behind text for premium feel */}
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-tuk-navy/10 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-        
-        <div className="container relative z-10 h-full mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-10 lg:gap-14 py-8 px-4 md:py-4">
-          {/* Left Content Column */}
+      {/* 1. CINEMATIC HERO SECTION */}
+      <section style={{
+        position: 'relative',
+        width: '100%',
+        minHeight: '100dvh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        background: 'linear-gradient(135deg, #020617 0%, #0a0f1e 30%, #030712 60%, #0c0a1a 100%)',
+        marginTop: 'calc(var(--navbar-height, 64px))',
+        paddingTop: '2rem',
+        paddingBottom: '4rem',
+      }}>
+        {/* Animated mesh background */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)', backgroundSize: '40px 40px', pointerEvents: 'none', zIndex: 0 }} />
+
+        {/* Animated glow orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ position: 'absolute', top: '-100px', left: '-100px', width: '550px', height: '550px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+          style={{ position: 'absolute', bottom: '-80px', right: '-80px', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.45, 0.2] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+          style={{ position: 'absolute', top: '40%', right: '25%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }}
+        />
+
+        {/* Main content */}
+        <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '2.5rem' }}>
+
+          {/* Live badge */}
           <motion.div
-            className="flex-1 flex flex-col items-start w-full lg:max-w-[55%]"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.5rem 1.25rem', borderRadius: '999px', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.3)', backdropFilter: 'blur(12px)' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-tuk-navy/20 bg-background/50 backdrop-blur-md text-tuk-navy font-semibold mb-4 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.08em] sm:tracking-[0.15em] shadow-sm max-w-full text-left" style={{ wordBreak: 'break-word' }}>
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Jointly Convened by FEBE Faculty Rep Office • KUZA–TUK • ASA–TUK
-            </div>
-
-            <h1 className="font-extrabold mb-6 leading-[1.1] tracking-tight text-left" style={{ fontSize: 'clamp(2.4rem, 7vw, 5rem)', color: 'var(--foreground)', wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
-              TUK <span style={{ color: '#4ade80' }}>Frontier.</span><br />
-              <span style={{ color: 'var(--foreground)', opacity: 0.85, fontSize: 'clamp(1.35rem,4.5vw,3.5rem)' }}>Innovation at the Frontier.</span>
-            </h1>
-
-            <p className="text-base md:text-xl mb-8 font-medium max-w-xl leading-relaxed text-left" style={{ color: 'var(--muted-foreground)' }}>
-              Kenya's premier 72-hour student engineering & technology innovation summit. Transforming student talent into market-ready solutions, startups, and employment-ready graduates.
-            </p>
-
-            <div className="flex flex-row w-full justify-start gap-3 sm:gap-4 mb-8">
-              <Link to="/register" className="btn inline-flex items-center justify-center transition-all hover:-translate-y-1 hover:shadow-lg duration-300 text-sm sm:text-base px-6 py-3.5" style={{ backgroundColor: 'var(--tuk-gold)', color: '#000', borderRadius: 'var(--radius-xl)', fontWeight: 700, flex: '0 1 auto', minWidth: '150px' }}>
-                Register <ArrowRight size={16} className="ml-2" />
-              </Link>
-              <Link to="/sponsor" className="btn btn-outline inline-flex items-center justify-center backdrop-blur-sm transition-all hover:-translate-y-1 duration-300 text-sm sm:text-base px-6 py-3.5" style={{ borderRadius: 'var(--radius-xl)', color: 'var(--foreground)', flex: '0 1 auto', minWidth: '140px' }}>
-                Sponsor Us
-              </Link>
-            </div>
-
-            {/* Quick Hero Feature Badges */}
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold" style={{ color: 'var(--muted-foreground)' }}>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
-                <Calendar size={14} className="text-amber-500" /> Oct 2–4, 2026
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
-                <MapPin size={14} className="text-emerald-500" /> TUK Main Campus
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
-                <Clock size={14} className="text-blue-500" /> 72H Sprint
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'var(--muted)', border: '1px solid var(--glass-border)' }}>
-                <Trophy size={14} className="text-purple-500" /> Awards & Incubation
-              </span>
-            </div>
+            <span style={{ position: 'relative', display: 'flex', width: '8px', height: '8px' }}>
+              <span style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: '#4ade80', animation: 'ping 1.5s ease-out infinite', opacity: 0.75 }} />
+              <span style={{ position: 'relative', width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', display: 'inline-flex' }} />
+            </span>
+            <span style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#4ade80' }}>
+              Applications Open · Oct 2–4, 2026 · TUK Main Campus
+            </span>
           </motion.div>
 
-          {/* Right Open Countdown Showcase */}
+          {/* Main headline */}
           <motion.div
-            className="flex-1 w-full lg:max-w-[42%] flex flex-col items-center justify-center gap-6"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}
           >
-            {/* Live Status Header Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full" style={{ background: 'rgba(74, 222, 128, 0.1)', border: '1px solid rgba(74, 222, 128, 0.3)' }}>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <h1 style={{
+              fontSize: 'clamp(3rem, 9vw, 7rem)',
+              fontWeight: 900,
+              lineHeight: 1.0,
+              letterSpacing: '-0.04em',
+              color: '#ffffff',
+              margin: 0,
+            }}>
+              TUK{' '}
+              <span style={{
+                background: 'linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #a78bfa 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>
+                Frontier
               </span>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-500">Countdown to Hackathon</span>
-            </div>
+            </h1>
+            <h2 style={{
+              fontSize: 'clamp(1.1rem, 3.2vw, 2.4rem)',
+              fontWeight: 600,
+              color: 'rgba(255,255,255,0.5)',
+              margin: 0,
+              letterSpacing: '-0.01em',
+              lineHeight: 1.3,
+            }}>
+              Innovation at the Frontier.
+            </h2>
+          </motion.div>
 
-            {/* Countdown Display: 4 Open Glass Cards */}
-            <div className="grid grid-cols-4 gap-2.5 sm:gap-4 w-full">
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.45)', maxWidth: '640px', lineHeight: 1.7, margin: 0 }}
+          >
+            Kenya's premier <strong style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>72-hour student engineering & technology summit</strong>. Transforming student talent into market-ready solutions, startups, and employment-ready graduates.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
+          >
+            <Link to="/register" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              padding: '0.85rem 2rem', borderRadius: '999px',
+              background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+              color: '#000', fontWeight: 800, fontSize: '0.95rem',
+              textDecoration: 'none', boxShadow: '0 0 40px rgba(251,191,36,0.35), 0 8px 20px rgba(0,0,0,0.3)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 60px rgba(251,191,36,0.5), 0 12px 30px rgba(0,0,0,0.4)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(251,191,36,0.35), 0 8px 20px rgba(0,0,0,0.3)'; }}
+            >
+              Register Now <ArrowRight size={16} />
+            </Link>
+            <Link to="/about" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              padding: '0.85rem 2rem', borderRadius: '999px',
+              background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)',
+              color: 'rgba(255,255,255,0.85)', fontWeight: 600, fontSize: '0.95rem',
+              textDecoration: 'none', backdropFilter: 'blur(10px)',
+              transition: 'background 0.2s, border-color 0.2s, transform 0.2s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.12)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            >
+              Learn More
+            </Link>
+          </motion.div>
+
+          {/* COUNTDOWN SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            style={{ width: '100%', maxWidth: '560px' }}
+          >
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textAlign: 'center' }}>
+              Starts in
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.75rem' }}>
               {[
-                { label: 'Days', value: timeLeft.days, color: 'var(--tuk-gold)' },
-                { label: 'Hours', value: timeLeft.hours, color: '#60a5fa' },
-                { label: 'Minutes', value: timeLeft.minutes, color: '#34d399' },
-                { label: 'Seconds', value: timeLeft.seconds, color: '#c084fc' }
+                { label: 'Days', value: timeLeft.days, glow: 'rgba(251,191,36,0.4)', grad: 'linear-gradient(135deg,rgba(251,191,36,0.15),rgba(251,191,36,0.04))' },
+                { label: 'Hours', value: timeLeft.hours, glow: 'rgba(96,165,250,0.4)', grad: 'linear-gradient(135deg,rgba(96,165,250,0.15),rgba(96,165,250,0.04))' },
+                { label: 'Min', value: timeLeft.minutes, glow: 'rgba(52,211,153,0.4)', grad: 'linear-gradient(135deg,rgba(52,211,153,0.15),rgba(52,211,153,0.04))' },
+                { label: 'Sec', value: timeLeft.seconds, glow: 'rgba(192,132,252,0.4)', grad: 'linear-gradient(135deg,rgba(192,132,252,0.15),rgba(192,132,252,0.04))' },
               ].map((unit, i) => (
                 <motion.div
                   key={i}
-                  whileHover={{ y: -3 }}
-                  className="flex flex-col items-center justify-center py-4 px-2 sm:py-5 sm:px-3 rounded-2xl text-center"
+                  whileHover={{ y: -4, scale: 1.04 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                   style={{
-                    background: 'var(--glass-bg)',
-                    border: '1px solid var(--glass-border)',
-                    backdropFilter: 'blur(12px)',
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)'
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                    padding: '1.25rem 0.5rem',
+                    borderRadius: '1.25rem',
+                    background: unit.grad,
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    backdropFilter: 'blur(20px)',
+                    boxShadow: `0 0 30px ${unit.glow}, inset 0 1px 0 rgba(255,255,255,0.07)`,
+                    cursor: 'default',
                   }}
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-1.5 tabular-nums" style={{ color: 'var(--foreground)' }}>
+                  <span style={{
+                    fontSize: 'clamp(2rem, 5vw, 3rem)',
+                    fontWeight: 900,
+                    lineHeight: 1,
+                    color: '#fff',
+                    letterSpacing: '-0.03em',
+                    fontVariantNumeric: 'tabular-nums',
+                    fontFamily: 'monospace',
+                  }}>
                     {String(unit.value).padStart(2, '0')}
-                  </div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.15em] font-bold" style={{ color: 'var(--muted-foreground)' }}>
+                  </span>
+                  <span style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '0.4rem' }}>
                     {unit.label}
-                  </div>
+                  </span>
                 </motion.div>
               ))}
             </div>
+          </motion.div>
 
-            {/* Floating Challenge Tracks Preview Chips */}
-            <div className="w-full flex flex-col gap-3 pt-2">
-              <div className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: 'var(--muted-foreground)' }}>
-                6 Specialized Innovation Tracks
-              </div>
-              <div className="flex flex-wrap justify-center gap-2">
-                {[
-                  'Geospatial & EO',
-                  'AI & Data Science',
-                  'Smart Infrastructure',
-                  'Climate Tech',
-                  'Health Tech',
-                  'Fintech & Inclusion'
-                ].map((track, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-medium px-3 py-1.5 rounded-xl transition-transform hover:scale-105"
-                    style={{
-                      background: 'var(--muted)',
-                      border: '1px solid var(--glass-border)',
-                      color: 'var(--foreground)'
-                    }}
-                  >
-                    {track}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom perks note */}
-            <div className="flex items-center justify-center gap-2 text-xs font-semibold" style={{ color: 'var(--muted-foreground)' }}>
-              <CheckCircleIcon size={14} className="text-emerald-500" />
-              <span>Free Registration • Meals & Hackathon Swag Provided</span>
+          {/* Innovation Tracks chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.75 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}
+          >
+            <span style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.25)' }}>
+              6 Innovation Tracks
+            </span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}>
+              {[
+                { name: 'Geospatial & EO', color: '#4ade80' },
+                { name: 'AI & Data Science', color: '#60a5fa' },
+                { name: 'Smart Infrastructure', color: '#f59e0b' },
+                { name: 'Climate Tech', color: '#34d399' },
+                { name: 'Health Tech', color: '#f87171' },
+                { name: 'Fintech & Inclusion', color: '#c084fc' },
+              ].map((track, i) => (
+                <motion.span
+                  key={i}
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  style={{
+                    padding: '0.4rem 1rem',
+                    borderRadius: '999px',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    color: track.color,
+                    background: `${track.color}12`,
+                    border: `1px solid ${track.color}30`,
+                    cursor: 'default',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  {track.name}
+                </motion.span>
+              ))}
             </div>
           </motion.div>
+
+          {/* Perks note */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.3)', fontSize: '0.78rem', fontWeight: 500 }}
+          >
+            <CheckCircleIcon size={14} color="#4ade80" />
+            Free Registration · Meals & Swag Included · Open to All TUK Students
+          </motion.div>
+
         </div>
+
+        {/* Bottom fade */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '120px', background: 'linear-gradient(to bottom, transparent, #020617)', pointerEvents: 'none', zIndex: 1 }} />
       </section>
+
+
+
+
 
       {/* 2. Live Sponsors Marquee */}
       {sponsors.length > 0 && (
