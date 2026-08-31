@@ -654,7 +654,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="md:col-span-2 p-8 rounded-[2rem] bg-slate-900/30 border border-slate-800/80 flex flex-col justify-between min-h-[220px]">
               <div>
-                <h3 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tuk-gold to-yellow-300 tracking-tight">KSh 6,500,000+</h3>
+                <h3 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tuk-gold to-yellow-300 tracking-tight">Grand Prizes</h3>
                 <p className="text-lg font-semibold text-slate-200 mt-4">Cash Prizes & Innovation Grants</p>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">Direct support, investment funding, cloud credits, and physical items distributed among first, second, and third place teams across multiple tracks.</p>
