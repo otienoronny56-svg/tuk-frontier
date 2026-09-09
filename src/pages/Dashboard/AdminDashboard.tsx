@@ -607,8 +607,8 @@ export default function AdminDashboard() {
 
   const handleInitializeContent = async () => {
     const defaultData = [
-      { key: 'faqs', value: [{ q: "When is the hackathon?", a: "October 2nd!" }] },
-      { key: 'schedule', value: [{ day: "Day 1", date: "Oct 24", events: [{ time: "09:00", title: "Registration", location: "Hall" }] }] },
+      { key: 'faqs', value: [{ q: "When is the hackathon?", a: "October 15th–16th, 2026!" }] },
+      { key: 'schedule', value: [{ day: "Day 1", date: "Oct 15", events: [{ time: "09:00", title: "Registration", location: "Hall" }] }] },
       { key: 'rules', value: ["All code must be fresh.", "Be respectful to everyone."] },
       { key: 'gallery', value: [] }
     ];

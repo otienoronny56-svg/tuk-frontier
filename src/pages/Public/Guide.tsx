@@ -143,7 +143,7 @@ export default function Guide() {
                   {
                     step: 3, icon: <Zap size={20} />, color: '#4ade80',
                     title: 'Hack for 48 Hours',
-                    desc: 'The hackathon kicks off at 9:00 AM on October 2nd. Build your project, attend mentor sessions, pitch your idea to sponsors, and refine your demo. All code must be written during the event.'
+                    desc: 'The hackathon kicks off at 9:00 AM on October 15th. Build your project, attend mentor sessions, pitch your idea to sponsors, and refine your demo. All code must be written during the event.'
                   },
                   {
                     step: 4, icon: <Upload size={20} />, color: '#c084fc',
@@ -158,7 +158,7 @@ export default function Guide() {
                   {
                     step: 6, icon: <Trophy size={20} />, color: '#fbbf24',
                     title: 'Prizes & Recognition',
-                    desc: 'Top teams are announced at the Closing Ceremony on October 3rd. Winners receive cash prizes, incubation support, cloud credits, and more. All participants receive a certificate and hackathon swag.'
+                    desc: 'Top teams are announced at the Closing Ceremony on October 16th. Winners receive cash prizes, incubation support, cloud credits, and more. All participants receive a certificate and hackathon swag.'
                   }
                 ].map((item, idx, arr) => (
                   <div key={idx} style={{ display: 'flex', gap: '1.5rem', position: 'relative' }}>

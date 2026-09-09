@@ -4,10 +4,24 @@ import { Link } from 'react-router-dom';
 import { Rocket, Target, Trophy, Clock, ArrowRight, Code, Zap, Globe, Coins, Cpu, Leaf, CheckCircle as CheckCircleIcon, Shield } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
-const COUNTDOWN_TARGET = new Date('2026-10-02T09:00:00+03:00').getTime();
+const COUNTDOWN_TARGET = new Date('2026-10-15T09:00:00+03:00').getTime();
+
+const calculateTimeLeft = () => {
+  const now = new Date().getTime();
+  const distance = COUNTDOWN_TARGET - now;
+  if (distance < 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+  return {
+    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+    seconds: Math.floor((distance % (1000 * 60)) / 1000)
+  };
+};
 
 export default function Home() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [sponsors, setSponsors] = useState<any[]>([]);
   const [tracks, setTracks] = useState<any[]>([]);
 
@@ -21,22 +35,13 @@ export default function Home() {
     };
     fetchData();
 
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = COUNTDOWN_TARGET - now;
+    const updateTimer = () => {
+      const remaining = calculateTimeLeft();
+      setTimeLeft(remaining);
+    };
 
-      if (distance < 0) {
-        clearInterval(timer);
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000)
-      });
-    }, 1000);
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -116,7 +121,7 @@ export default function Home() {
               <span style={{ position: 'relative', width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', display: 'inline-flex' }} />
             </span>
             <span style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#4ade80' }}>
-              Applications Open · Oct 2–4, 2026 · TUK Main Campus
+              Applications Open · Oct 15–16, 2026 · TUK Main Campus
             </span>
           </motion.div>
 
